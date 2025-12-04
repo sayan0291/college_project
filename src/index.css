@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+
+header{
+    margin: 1rem 1rem 0;
+    padding: 1rem 4rem;
+}
+
+.homepage{
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.size{
+    height: 70vh;
+    padding: 1rem 4rem;
+}
+
+.image1{
+    box-shadow: 0 10px 20px rgb(101, 99, 99);
+}
+
+footer{
+    height: auto;
+    padding: 2rem 2rem 4rem;
+    margin-top: 2rem;
+    background-color: rgb(9, 14, 64);
+}

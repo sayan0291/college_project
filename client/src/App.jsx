@@ -1,5 +1,8 @@
 import { use, useRef } from 'react'
+import { useEffect } from 'react'
 import './App.css'
+import AOS from "aos"
+import "aos/dist/aos.css"
 import Navbar from './Navbar'
 import Home from './Home'
 import Notice from './Notice'
@@ -11,6 +14,15 @@ function App() {
   const homeRef = useRef(null)
   const aboutRef = useRef(null)
   const contactRef = useRef(null)
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800, 
+      easing: "ease-in-out",
+      once: false,
+      mirror: true,
+    });
+  }, []);
   
   return (
     <>
@@ -23,5 +35,6 @@ function App() {
     </>
   )
 }
+
 
 export default App

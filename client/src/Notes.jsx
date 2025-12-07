@@ -11,20 +11,31 @@ function Notes(){
     }
 
     return(
-        <div className="flex justify-center align-center my-5 gap-20 font-serif">
-            <select className="p-2 bg-blue-300 rounded font-md text-blue-900" value={department} onChange={departmentchange}>
-                <option value="">Select Department</option>
-                <option value="DCST">DCST</option>
-                <option value="">Select Department</option>
-                <option value="">Select Department</option>
-            </select>
+        <div className="px-10 py-3 font-serif">
+            <div className="relative w-fit mx-7 px-35 rounded-tl-md rounded-br-md bg-gray-400">
+            <h2 className="text-white font-bold p-3">
+                Notes
+            </h2>
+            <span className="absolute -top-1 -right-1 flex">
+                <span className="absolute inline-flex h-5 w-5 animate-ping rounded-full bg-sky-400 opacity-75"></span>
+                <span className="relative inline-flex h-5 w-5 rounded-full bg-sky-500"></span>
+            </span>
+            </div>
+            <div className="flex flex-col justify-between gap-10 m-5 p-3">
+                <select className="p-2 bg-blue-300 rounded font-md text-blue-900 w-1/6" value={department} onChange={departmentchange}>
+                    <option value="">Select Department</option>
+                    <option value="DCST">DCST</option>
+                    <option value="">Select Department</option>
+                    <option value="">Select Department</option>
+                </select>
 
-            <select className="p-2 bg-blue-300 rounded font-md text-blue-900" value={year} onChange={yearChange}>
-                <option value="">Select Year</option>
-                <option value="1st Year">1st Year</option>
-                <option value="2nd Year">2nd Year</option>
-                <option value="3rd Year">3rd year</option>
-            </select>
+                <select className="p-2 bg-blue-300 rounded font-md text-blue-900 w-1/6" value={year} onChange={yearChange}>
+                    <option value="">Select Year</option>
+                    <option value="1st Year">1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd year</option>
+                </select>
+            </div>
         </div>
     )
 }

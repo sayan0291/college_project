@@ -2,7 +2,7 @@ function Contact(){
 
     const link = "https://www.drmsithaldia.in/"
     return(
-        <div className="text-center px-10 py-5 m-5">
+        <div className="text-center px-10 py-5">
             <div className="relative w-fit mx-7 px-35 rounded-tl-md rounded-br-md bg-gray-400">
                 <h2 className="text-white font-bold p-3">
                     Contact

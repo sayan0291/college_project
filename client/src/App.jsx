@@ -1,4 +1,3 @@
-import { use, useRef } from 'react'
 import { useEffect } from 'react'
 import './App.css'
 import AOS from "aos"
@@ -9,11 +8,11 @@ import Notice from './Notice'
 import About from './About'
 import Footer from './Footer'
 import Contact from './Contact'
+import Notes from './Notes'
+import Admin from './Admin'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  const homeRef = useRef(null)
-  const aboutRef = useRef(null)
-  const contactRef = useRef(null)
 
   useEffect(() => {
     AOS.init({
@@ -26,11 +25,15 @@ function App() {
   
   return (
     <>
-      <Navbar homeRef={homeRef} aboutRef={aboutRef} contactRef={contactRef} />
+      <Navbar />
       <Notice />
-      <section ref={homeRef}><Home /></section>
-      <section ref={aboutRef}><About /></section>
-      <section ref={contactRef}><Contact /></section>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/notes' element={<Notes />} />
+      </Routes>
       <Footer />
     </>
   )

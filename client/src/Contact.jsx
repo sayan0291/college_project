@@ -1,8 +1,12 @@
+import website from "./assets/localization.png"
+import phone from "./assets/telephone.png"
+import email from "./assets/mail.png"
+
 function Contact(){
 
     const link = "https://www.drmsithaldia.in/"
     return(
-        <div className="text-center px-10 py-5 m-5">
+        <div className="px-10 py-5 w-full">
             <div className="relative w-fit mx-7 px-35 rounded-tl-md rounded-br-md bg-gray-400">
                 <h2 className="text-white font-bold p-3">
                     Contact
@@ -13,16 +17,25 @@ function Contact(){
                 </span>
             </div>
                 <img className="px-45 my-5 rounded-md" src="https://www.drmsithaldia.in/themes/images/carousel/banner6.jpg" alt="whole-campus" />
-            <div data-aos="fade-left">
-                <h2 className='text-2xl text-violet-900 underline underline-offset-10 font-serif'>DR. Meghnad Saha Instite of Technology</h2>
-                <h3 className="flex justify-center font-bold my-1 text-blue-900 font-serif ">P.O. :<p className="font-bold text-blue-400">&nbsp; Debhog, Haldia</p></h3>
-                <h3 className="flex justify-center font-bold my-1 text-blue-900 font-serif ">DIST :<p className="font-bold text-blue-400">&nbsp; Purba Medinipur</p></h3>
-                <h3 className="flex justify-center font-bold my-1 text-blue-900 font-serif ">Pin :<p className="font-bold text-blue-400">&nbsp; 721657, WB, INDIA.</p></h3>
-                <h3 className="flex justify-center font-bold my-1 text-blue-900 font-serif ">Phone & Fax :<p className="font-bold text-blue-400 font-sans">&nbsp; 03224-253064</p></h3>
-                <h3 className="flex justify-center font-bold my-1 text-blue-900 font-serif">Email :<p className="font-bold text-blue-400">&nbsp;drmsithaldia@yahoo.com,drmsithaldia.tpc@gmail.com</p></h3>
-                <h3 className="flex justify-center font-bold my-1 text-blue-900 font-serif">WEBSITE :<a className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" href={link} target="_blank"
-                        rel="noopener noreferrer">&nbsp;www.drmsithaldia.in</a></h3>
+            <div className="centerize">
+                <div className="align-section" data-aos="fade-left">
+                    <img className="w-1/14" src={website} alt="website-icon" />
+                    <a className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" href={link} target="_blank" rel="noopener noreferrer">&nbsp;www.drmsithaldia.in</a>
+                </div>
+                <div className="align-section" data-aos="fade-left">
+                    <img className="w-1/14" src={phone} alt="website-icon" />
+                    <a className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" href={link} target="_blank" rel="noopener noreferrer">&nbsp;03224-253064</a>
+                </div>
+                <div className="align-section" data-aos="fade-left">
+                    <img className="w-1/14" src={email} alt="website-icon" />
+                    <a className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" href={link} target="_blank" rel="noopener noreferrer">&nbsp;drmsithaldia@yahoo.com</a>
+                </div>
+                <div className="align-section" data-aos="fade-left">
+                    <img className="w-1/14" src={email} alt="website-icon" />
+                    <a className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" href={link} target="_blank" rel="noopener noreferrer">&nbsp;drmsithaldia.tpc@gmail.com</a>
+                </div>
             </div>
+            
         </div>
     )
 }

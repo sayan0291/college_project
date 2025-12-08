@@ -1,8 +1,6 @@
-function Navbar({ homeRef, aboutRef, contactRef }){
+import { Link } from "react-router-dom"
 
-    const scrollToSection = (ref) => {
-        ref.current.scrollIntoView({ behavior: "smooth" });
-      };
+function Navbar(){
     
     return(
             <header className="flex justify-between items-center rounded-md shadow-md">
@@ -15,11 +13,11 @@ function Navbar({ homeRef, aboutRef, contactRef }){
                     <span class="relative text-3xl font-serif">MSIT</span>
                 </a>
                 <nav className="flex list-none gap-6 text-lg font-normal">
-                <a onClick={() => scrollToSection(homeRef)} class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Home</a>
-                <a onClick={() => scrollToSection(aboutRef)}  class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">About</a>
-                <a onClick={() => scrollToSection(contactRef)}  class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Contact</a>
-                {/* <a onClick={() => scrollToSection(noteRef)} class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Notes</a> */}
-                {/* <a onClick={() => scrollToSection(homeRef)}  class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Login</a> */}
+                <Link to="/home" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Home</Link>
+                <Link to="/about" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">About</Link>
+                <Link to="/contact" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Contact</Link>
+                <Link to="/notes" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Notes</Link>
+                <Link to="/login" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Login</Link>
                 </nav>
             </header>
       );

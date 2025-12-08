@@ -9,6 +9,7 @@ import About from './About'
 import Footer from './Footer'
 import Contact from './Contact'
 import Notes from './Notes'
+import Admin from './Admin'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {

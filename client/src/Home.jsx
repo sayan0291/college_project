@@ -4,7 +4,7 @@ import HomeImage3 from './assets/right_10023784.png'
 
 function Home(){
     return(
-        <div className='homepage font-serif'>
+        <div className='homepage font-serif my-5'>
             <div className='flex justify-center gap-15 size'>
             <img src={HomeImage1} className="w-1/2 h-auto rounded-md image1" alt="MSIT-image1" />
             <div className='flex flex-col text-start' data-aos="fade-left">
@@ -23,26 +23,26 @@ function Home(){
                 <img className='w-2/4 rounded-md image1' src="https://hihshaldia.in/public/website/assets/images/backgrounds/vision.jpg" alt="vision" />
                 <div className='m-5 text-start text-blue-800'>
                     <h2 className='font-bold text-sky-900 mx-5 text-2xl' data-aos="fade-right">Our Vision</h2>
-                    <div className='flex p-2' data-aos="fade-left">
+                    <div className='align-section p-2' data-aos="fade-left">
                         <img className='w-1/10' src={HomeImage3} alt="right" />
-                        <p className='p-3'>To deliver industry-relevant technical education that transforms students into skilled professionals ready for tomorrow's challenges.</p>
+                        <p className='mx-2'>To deliver industry-relevant technical education that transforms students into skilled professionals ready for tomorrow's challenges.</p>
                     </div>
-                    <div className='flex p-2' data-aos="fade-left">
+                    <div className='align-section p-2' data-aos="fade-left">
                         <img className='w-1/10' src={HomeImage3} alt="right" />
-                        <p className='p-3'>To cultivate innovation throughh ands-onlearning experiences that bridge theoretical knowledge with practical applications.
+                        <p className='mx-2'>To cultivate innovation throughh ands-onlearning experiences that bridge theoretical knowledge with practical applications.
                         </p>
                     </div>
-                    <div className='flex p-2' data-aos="fade-left">
+                    <div className='align-section p-2' data-aos="fade-left">
                         <img className='w-1/10' src={HomeImage3} alt="right" />
-                        <p className='p-3'>To instill ethical leadership values alongside technical expertise, preparing graduates who positively impact society.</p>
+                        <p className='mx-2'>To instill ethical leadership values alongside technical expertise, preparing graduates who positively impact society.</p>
                     </div>
-                    <div className='flex p-2' data-aos="fade-left">
+                    <div className='align-section p-2' data-aos="fade-left">
                         <img className='w-1/10' src={HomeImage3} alt="right" />
-                        <p className='p-3'>To establish meaningful industry partnerships that enhance learning and employment outcomes.</p>
+                        <p className='mx-2'>To establish meaningful industry partnerships that enhance learning and employment outcomes.</p>
                     </div>
-                    <div className='flex p-2' data-aos="fade-left">
+                    <div className='align-section p-2' data-aos="fade-left">
                         <img className='w-1/10' src={HomeImage3} alt="right" />
-                        <p className='p-3'>To empower students with relevant knowledge and values that drive regional technological advancement.</p>
+                        <p className='mx-2'>To empower students with relevant knowledge and values that drive regional technological advancement.</p>
                     </div>
                 </div>
             </div>

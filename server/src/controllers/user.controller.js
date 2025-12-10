@@ -25,12 +25,21 @@ const register = asyncHandler(async(req, res) => {
 
     const existingUser = await User.find({$or: [{email}, {registrationNumber}]});
 
-    if (!existingUser) {
+    if (existingUser) {
         throw new apiError(400, "User already exists..");
+    }
+
+    // Determine role based on provided identifier
+    const role = email ? "Teacher" : "Student";
+
+    // Validate semester is provided for students
+    if (role === "Student" && !semester) {
+        throw new apiError(400, "Semester is required for students..");
     }
 
     const user = await User.create({
         userName,
+        role,
         email,
         registrationNumber,
         password,
@@ -83,8 +92,8 @@ const logIn = asyncHandler(async(req, res) => {
 
     return res
     .status(200)
-    .cookies("accessToken", accessToken, option)
-    .cookies("refreshToken", refreshToken, option)
+    .cookie("accessToken", accessToken, option)
+    .cookie("refreshToken", refreshToken, option)
     .json(
         new apiResponse(
             200,
@@ -114,15 +123,15 @@ const logOut = asyncHandler(async(req, res) => {
 
     return res
     .status(200)
-    .cookies("accessToken", option)
-    .cookies("refreshToken", option)
+    .cookie("accessToken", "", {...option, maxAge: 0})
+    .cookie("refreshToken", "", {...option, maxAge: 0})
     .json(
         new apiResponse(200, "", "user logged out successfully..")
     )
 });
 
 const refreshAccessToken = asyncHandler(async(req, res) => {
-    const isComingRefreshToken = req.cookies.accessToken || req.body.accessToken;
+    const isComingRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
 
     if (!isComingRefreshToken) {
         throw new apiError(400, "Unauthorized access..");
@@ -136,7 +145,7 @@ const refreshAccessToken = asyncHandler(async(req, res) => {
 
         const user = await User.findById(decodedToken._id)
         if (!user) {
-            throw new apiError("Invalid token..")
+            throw new apiError(401, "Invalid token..")
         }
 
         if (isComingRefreshToken !== user?.refreshToken) {
@@ -152,8 +161,8 @@ const refreshAccessToken = asyncHandler(async(req, res) => {
 
         return res
         .status(200)
-        .cookies("accessToken", accessToken, option)
-        .cookies("refreshToken", newRefreshToken, option)
+        .cookie("accessToken", accessToken, option)
+        .cookie("refreshToken", newRefreshToken, option)
         .json(
             new apiResponse(
                 200, 

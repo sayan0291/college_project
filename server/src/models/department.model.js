@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { modelName } = require("./subject.model");
 const Schema = mongoose.Schema;
 
 const departmentSchema = new Schema({

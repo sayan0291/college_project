@@ -1,17 +1,6 @@
 import { useState } from "react"
 
 function Notes(){
-
-    const [department,setDepartment] = useState("")
-    const departmentchange = (event) => {
-        setDepartment(event.target.value)
-    }
-
-    const [year,setYear] = useState("")
-    const yearChange = (event) => {
-        setYear(event.target.value)
-    }
-
     const [sem,setSem] = useState("")
     const setChange = (event) => {
         setSem(event.target.value)
@@ -30,20 +19,6 @@ function Notes(){
             </div>
             <div className="flex justify-between p-2">
                 <div className="flex flex-col gap-5 m-5 padding-bottom">
-                    <select className="p-2 bg-blue-200 rounded font-md text-blue-950 focus:outline focus:outline-violet-500" value={department} onChange={departmentchange}>
-                        <option value="">Select Department</option>
-                        <option value="DCST">DCST</option>
-                        <option value="">Select Department</option>
-                        <option value="">Select Department</option>
-                    </select>
-
-                    <select className="p-2 bg-blue-200 rounded font-md text-blue-950 focus:outline focus:outline-violet-500" value={year} onChange={yearChange}>
-                        <option value="">Select Year</option>
-                        <option value="1st Year">1st Year</option>
-                        <option value="2nd Year">2nd Year</option>
-                        <option value="3rd Year">3rd year</option>
-                    </select>
-
                     <select className="p-2 bg-blue-200 rounded font-md text-blue-950 focus:outline focus:outline-violet-500" value={sem} onChange={setChange}>
                         <option value="">Select Sem</option>
                         <option value="1st Sem">1st Sem</option>

@@ -12,16 +12,28 @@ const userSchema = new Schema({
         enum: ["Teacher", "Student"],
         required: true
     },
-    email: {
+    email: { // Only for teachers
         type: String,
-        required: true
+        sparse: true
     },
-    registrationNumber:{
+    registrationNumber:{  // Only for students
         type: String,
-        required: true
+        sparse: true
     },
     password: {
         type: String,
+    },
+    department: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Department",
+        required: true
+    },
+    semester: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Semester",
+        required: function() {
+            return this.role === "Student" // Only for students
+        }
     },
     refreshToken: {
         type: String,

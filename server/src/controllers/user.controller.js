@@ -17,7 +17,7 @@ const generateAccessAndRefreshToken = async(userId) => {
 }
 
 const register = asyncHandler(async(req, res) => {
-    const { userName, email, registrationNumber, password } = req.body;
+    const { userName, email, registrationNumber, password, department, semester } = req.body;
 
     if (!email && !registrationNumber) {
         throw new apiError(400, "Email or registration number is needed..");
@@ -33,7 +33,9 @@ const register = asyncHandler(async(req, res) => {
         userName,
         email,
         registrationNumber,
-        password
+        password,
+        department,
+        semester
     });
 
     const createdUser = await User.findById(user._id).select(

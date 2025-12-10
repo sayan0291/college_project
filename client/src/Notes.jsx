@@ -37,13 +37,6 @@ function Notes(){
                         <option value="">Select Department</option>
                     </select>
 
-                    <select className="p-2 bg-blue-300 rounded font-md text-blue-900" value={year} onChange={yearChange}>
-                        <option value="">Select Year</option>
-                        <option value="1st Year">1st Year</option>
-                        <option value="2nd Year">2nd Year</option>
-                        <option value="3rd Year">3rd year</option>
-                    </select>
-
                     <select className="p-2 bg-blue-300 rounded font-md text-blue-900" value={sem} onChange={setChange}>
                         <option value="">Select Sem</option>
                         <option value="1st Sem">1st Sem</option>

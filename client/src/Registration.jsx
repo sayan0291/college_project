@@ -16,7 +16,7 @@ function Registration(){
                     <input type="text" style={inputstyle} placeholder="Enter Password" />
                     <input type="text" style={inputstyle} placeholder="Confirm Password" />
                     <button style={buttonstyle} className="bg-[#6495ED] hover:bg-blue-600 duration-200">Sign UP</button>
-                    <div className="flex"><p>Have an Account ?</p><Link to='/admin' className="font-bold text-blue-500 hover:text-blue-600">&nbsp;Log IN</Link></div>
+                    <div className="flex"><p className="text-gray-600">Have an Account ?</p><Link to='/admin' className="font-bold text-blue-500 hover:text-blue-600">&nbsp;Log IN</Link></div>
                 </form>
             </div>
         </div>

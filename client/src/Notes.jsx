@@ -7,11 +7,6 @@ function Notes(){
         setDepartment(event.target.value)
     }
 
-    const [year,setYear] = useState("")
-    const yearChange = (event) => {
-        setYear(event.target.value)
-    }
-
     const [sem,setSem] = useState("")
     const setChange = (event) => {
         setSem(event.target.value)

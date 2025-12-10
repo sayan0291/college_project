@@ -18,7 +18,7 @@ function Notes(){
     }
 
     return(
-        <div className="px-10 py-3 font-serif">
+        <div className="px-10 py-5 font-serif">
             <div className="relative w-fit mx-7 rounded-tl-md rounded-br-md gradient">
             <h2 className="text-white font-bold text-lg p-3 uppercase">
                 Notes

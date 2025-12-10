@@ -8,7 +8,8 @@ header{
 
 .homepage{
     align-items: center;
-    padding: 0 10px;
+    padding: 0 20px;
+    margin-bottom: 3rem;
 }
 
 .size{
@@ -26,6 +27,7 @@ header{
 
 .gradient{
     padding: 0 4rem;
+    margin-bottom: 1.2rem;
     background: linear-gradient(to right, rgb(9, 9, 104), rgb(167, 25, 233));
 }
 
@@ -40,6 +42,12 @@ header{
     align-items: center;
     margin: 10px;
 }
+
+.shadow{
+    box-shadow: 0 1px 8px rgba(108, 121, 202, 0.573);
+   
+}
+
 
 footer{
     height: auto;

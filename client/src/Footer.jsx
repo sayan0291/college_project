@@ -17,6 +17,9 @@ function Footer(){
             <div className='flex gap-20 py-7'>
             <div>
                 <img className="h-20 rounded-md" src={footerimage} alt="footer-image" />
+                <div className='flex text-3xl rounded p-5 gap-5'>
+                    {icons.map( (obj,index) => (<a key={index} href={obj.link} target='_blank' rel='noopener noreferrer' className={obj.design}>{obj.icon}</a>))}
+                </div>
             </div>
             <div className='flex flex-col gap-5'>
                 <h2 className='text-start text-violet-400 text-xl font-bold'>Contact</h2>
@@ -30,7 +33,7 @@ function Footer(){
                     <div className='p-3 border rounded-4xl bg-white hover:bg-blue-100'>
                         <FaLocationDot className="text-blue-900 text-xl hover:text-green-700" />
                     </div>
-                    <a className="font-bold text-blue-100 hover:text-blue-200 cursor-pointer" href="tel:" target="_blank" rel="noopener noreferrer">&nbsp;Debhog,Haldia Pin-721657,Purba Medinipur,WB,India</a>
+                    <a className="font-bold text-sm text-blue-100 hover:text-blue-200 cursor-pointer" href="tel:" target="_blank" rel="noopener noreferrer">&nbsp;Debhog,Haldia Pin-721657,Purba Medinipur,WB,India</a>
                 </div>
                 <div className='flex items-center gap-3' data-aos="fade-left">
                     <div className='p-3 border rounded-4xl bg-white hover:bg-blue-100'>
@@ -38,9 +41,6 @@ function Footer(){
                     </div>
                     <a className="font-bold text-blue-100 hover:text-blue-200 cursor-pointer" href="tel:" target="_blank" rel="noopener noreferrer">&nbsp;drmsithaldia.tpc@gmail.com</a>
                 </div>
-            </div>
-            <div className='flex flex-col text-3xl rounded p-5 gap-5'>
-                    {icons.map( (obj,index) => (<a key={index} href={obj.link} target='_blank' rel='noopener noreferrer' className={obj.design}>{obj.icon}</a>))}
             </div>
             </div>
             <hr className='h-1 bg-white' />

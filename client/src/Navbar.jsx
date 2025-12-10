@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function Navbar(){
     
     return(
-            <header className="flex justify-between items-center rounded-md shadow-md">
+            <header className="flex justify-between items-center">
                 <a class="relative px-6 py-3 font-medium text-white group">
                     <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-purple-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
                     <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-purple-700 group-hover:bg-purple-500 group-hover:-skew-x-12"></span>

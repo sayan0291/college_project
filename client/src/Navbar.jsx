@@ -10,14 +10,14 @@ function Navbar(){
 
                     <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-purple-600 -rotate-12"></span>
                     <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-purple-400 -rotate-12"></span>
-                    <span class="relative text-3xl font-serif">MSIT</span>
+                    <span class="relative text-xm font-serif">Dr. Meghnad Saha <br/>Institute of Technology, Haldia</span>
                 </a>
                 <nav className="flex list-none gap-6 text-lg font-normal">
-                <Link to="/home" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Home</Link>
-                <Link to="/about" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">About</Link>
-                <Link to="/contact" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Contact</Link>
-                <Link to="/notes" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Notes</Link>
-                <Link to="/login" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Login</Link>
+                <Link to="/home" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm focus:bg-blue-600 focus:text-white">Home</Link>
+                <Link to="/about" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm focus:bg-blue-600 focus:text-white">About</Link>
+                <Link to="/contact" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm focus:bg-blue-600 focus:text-white">Contact</Link>
+                <Link to="/notes" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm focus:bg-blue-600 focus:text-white">Notes</Link>
+                <Link to="/login" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm focus:bg-blue-600 focus:text-white">Login</Link>
                 </nav>
             </header>
       );

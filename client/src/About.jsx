@@ -1,8 +1,8 @@
 function About(){
     return(
         <div className="text-center px-10 py-3 font-serif">
-            <div className="relative w-fit mx-7 px-35 rounded-tl-md rounded-br-md bg-gray-400">
-            <h2 className="text-white font-bold p-3">
+            <div className="relative w-fit mx-7 rounded-tl-md rounded-br-md gradient">
+            <h2 className="text-white font-bold p-3 text-lg uppercase">
                 About
             </h2>
             <span className="absolute -top-1 -right-1 flex">

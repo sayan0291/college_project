@@ -19,32 +19,32 @@ function Notes(){
 
     return(
         <div className="px-10 py-3 font-serif">
-            <div className="relative w-fit mx-7 px-35 rounded-tl-md rounded-br-md bg-gray-400">
-            <h2 className="text-white font-bold p-3">
+            <div className="relative w-fit mx-7 rounded-tl-md rounded-br-md gradient">
+            <h2 className="text-white font-bold text-lg p-3 uppercase">
                 Notes
             </h2>
             <span className="absolute -top-1 -right-1 flex">
-                <span className="absolute inline-flex h-5 w-5 animate-ping rounded-full bg-sky-400 opacity-75"></span>
-                <span className="relative inline-flex h-5 w-5 rounded-full bg-sky-500"></span>
+                <span className="absolute inline-flex h-5 w-5 animate-ping rounded-full bg-sky-300 opacity-75"></span>
+                <span className="relative inline-flex h-5 w-5 rounded-full bg-sky-400"></span>
             </span>
             </div>
             <div className="flex justify-between p-2">
                 <div className="flex flex-col gap-5 m-5 padding-bottom">
-                    <select className="p-2 bg-blue-300 rounded font-md text-blue-900" value={department} onChange={departmentchange}>
+                    <select className="p-2 bg-blue-200 rounded font-md text-blue-950 focus:outline focus:outline-violet-500" value={department} onChange={departmentchange}>
                         <option value="">Select Department</option>
                         <option value="DCST">DCST</option>
                         <option value="">Select Department</option>
                         <option value="">Select Department</option>
                     </select>
 
-                    <select className="p-2 bg-blue-300 rounded font-md text-blue-900" value={year} onChange={yearChange}>
+                    <select className="p-2 bg-blue-200 rounded font-md text-blue-950 focus:outline focus:outline-violet-500" value={year} onChange={yearChange}>
                         <option value="">Select Year</option>
                         <option value="1st Year">1st Year</option>
                         <option value="2nd Year">2nd Year</option>
                         <option value="3rd Year">3rd year</option>
                     </select>
 
-                    <select className="p-2 bg-blue-300 rounded font-md text-blue-900" value={sem} onChange={setChange}>
+                    <select className="p-2 bg-blue-200 rounded font-md text-blue-950 focus:outline focus:outline-violet-500" value={sem} onChange={setChange}>
                         <option value="">Select Sem</option>
                         <option value="1st Sem">1st Sem</option>
                         <option value="2nd Sem">2nd Sem</option>
@@ -53,7 +53,7 @@ function Notes(){
                         <option value="5th Sem">5th Sem</option>
                         <option value="6th Sem">6th Sem</option>
                     </select>
-                    <button class="px-5 py-2.5 font-medium bg-blue-500 hover:bg-red-500 hover:text-violet-900 text-black rounded-lg text-sm">Enter</button>
+                    <button class="px-5 py-2 font-semibold bg-blue-800 hover:bg-blue-500  text-white rounded-xl text-lg">Enter</button>
                 </div>
                 <div className="w-full border">
                     

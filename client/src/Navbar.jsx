@@ -20,11 +20,11 @@ function Navbar(){
                     <span className="relative text-xm font-serif">Dr. Meghnad Saha <br/>Institute of Technology, Haldia</span>
                 </a>
                 <nav className="flex list-none gap-6 text-lg font-normal">
-                <NavLink to="/home" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Home</NavLink>
-                <NavLink to="/about" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>About</NavLink>
-                <NavLink to="/contact" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Contact</NavLink>
-                <NavLink to="/notes" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Notes</NavLink>
-                <NavLink to="/login" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Login</NavLink>
+                    <NavLink to="/home" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Home</NavLink>
+                    <NavLink to="/about" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>About</NavLink>
+                    <NavLink to="/contact" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Contact</NavLink>
+                    <NavLink to="/notes" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Notes</NavLink>
+                    <NavLink to="/login" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Login</NavLink>
                 </nav>
             </header>
       );

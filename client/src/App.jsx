@@ -14,6 +14,7 @@ import Admin from './Admin'
 import Student from './Student'
 import { Route, Routes } from 'react-router-dom'
 import Registration from './Registration'
+import StudentReg from './StudentReg'
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
         <Route path='/Login' element={<Login />} />
         <Route path='/admin' element={<Admin />} />
         <Route path='/student' element={<Student />} />
+        <Route path='/studentregistration' element={<StudentReg />} />
         <Route path='/registration' element={<Registration />} />
       </Routes>
       <Footer />

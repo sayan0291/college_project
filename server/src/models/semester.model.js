@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const subjectSchema = new Schema({
-    subjectName: {
+const semesterSchema = new Schema({
+    semester: {
         type: String,
         required: true
     },
@@ -10,13 +10,9 @@ const subjectSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Department"
     },
-    semester: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Semester"
-    }
     
 }, {timestamps: true});
 
-const Subject = mongoose.model("Subject", subjectSchema);
+const Semester = mongoose.model("Semester", semesterSchema);
 
-module.exports = Subject;
+module.exports = Semester;

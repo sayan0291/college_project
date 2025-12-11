@@ -1,31 +1,37 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const noteSchema = new Schema({
+const noteSchema = new Schema(
+  {
     title: {
-        type: String
+      type: String,
     },
     description: {
-        type: String
+      type: String,
     },
     noteUrl: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     notePublicId: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     subject: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Subject"
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Subject",
     },
     department: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Department"
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Department",
     },
-    
-}, {timestamps: true});
+    semester: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Semester",
+    },
+  },
+  { timestamps: true }
+);
 
 const Note = mongoose.model("Note", noteSchema);
 

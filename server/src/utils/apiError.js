@@ -9,7 +9,7 @@ class apiError extends Error {
         this.name = this.constructor.name
         this.statusCode = statusCode
         this.message = message
-        this.data = null,
+        this.data = null
         this.error = error
         this.success = false
         Error.captureStackTrace(this, this.constructor)

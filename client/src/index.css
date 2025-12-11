@@ -3,17 +3,18 @@
 
 header{
     margin: 1rem 1rem 0;
-    padding: 1rem 4rem;
+    padding: 0.5rem 1rem;
 }
 
 .homepage{
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 20px;
+    margin-bottom: 3rem;
 }
 
 .size{
     height: 70vh;
-    padding: 1rem 4rem;
+    padding: 1rem 1.8rem;
 }
 
 .image1{
@@ -22,6 +23,12 @@ header{
 
 .padding-bottom{
     padding-bottom: 15rem;
+}
+
+.gradient{
+    padding: 0 4rem;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(to right, rgb(9, 9, 104), rgb(167, 25, 233));
 }
 
 .centerize {
@@ -36,8 +43,14 @@ header{
     margin: 10px;
 }
 
+.shadow{
+    box-shadow: 0 1px 8px rgba(108, 121, 202, 0.573);
+   
+}
+
+
 footer{
     height: auto;
-    padding: 2rem 2rem 4rem;
-    background-color: rgb(30, 33, 76);
+    padding: 2rem 2rem 1.5rem;
+    background-color: rgb(3, 7, 58);
 }

@@ -71,8 +71,53 @@ const getSemesterById = asyncHandler(async(req, res) => {
     )
 });
 
+const updateSemester = asyncHandler(async(req, res) => {
+    const { semesterName, number, departmentId } = req.body;
+    const { semesterId } = req.params;
+
+    if (!semesterId) {
+        throw new apiError(400, "Semester id is required..");
+    }
+
+    const semester = await Semester.findById(semesterId);
+    if (!semester) {
+        throw new apiError(404, "No semester found..");
+    }
+
+    const updatedSemester = {};
+    if(semesterName) updatedSemester.semesterName = semesterName;
+    if(number) updatedSemester.number = number;
+    if(departmentId) updatedSemester.department = departmentId;
+
+    const update = await Semester.findByIdAndUpdate(
+        semesterId,
+        { $set: updatedSemester },
+        { new: true }
+    );
+
+    return res.status(200).json(
+        new apiResponse(200, update, "Update semester successfully..")
+    )
+});
+
+const deleteSemester = asyncHandler(async(req, res) => {
+    const { semesterId } = req.params;
+
+    if (!semesterId) {
+        throw new apiError(400, "Semester id is required..");
+    }
+
+    await Semester.findByIdAndDelete(semesterId);
+
+    return res.status(200).json(
+        new apiResponse(200, "Delete semester successfully..")
+    )
+});
+
 module.exports = {
     addSemester,
     getSemesterByDepartment,
-    getSemesterById
+    getSemesterById,
+    updateSemester,
+    deleteSemester
 }

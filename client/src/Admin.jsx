@@ -1,3 +1,4 @@
+import { MdBackupTable } from "react-icons/md"
 import { Link } from "react-router-dom"
 
 export const h2style = {
@@ -6,28 +7,33 @@ export const h2style = {
 }
 
 export const inputstyle = {
-    padding: "5px",
+    padding: "5px 10px",
     backgroundColor: "white",
-    borderRadius: "5px",
-    width: "80%"
+    borderRadius: "10px",
+    width: "100%",
+    fontSize:"16px",
+    color:"navy",
+    boxShadow:"0 1px 6px rgba(98, 125, 215, 0.626)"
+
 }
 
 export const buttonstyle = {
-    padding: "5px 15px",
-    borderRadius: "5px",
-    color: "white"
+    padding: "5px 30px",
+    borderRadius: "20px",
+    color: "white",
+    
 }
 
 function Admin(){
     return(
-        <div className="w-full p-5 flex justify-center font-serif">
-            <div className="px-23 bg-blue-100 rounded flex flex-col gap-5 py-5 w-1/3">
-                <h2 style={h2style}>Sign IN</h2>
+        <div className="w-full py-10 flex justify-center font-serif">
+            <div className="px-10 bg-blue-100 rounded-2xl flex flex-col gap-5 py-5 w-1/3 shadow">
+                <h2 className="text-center font-bold" style={h2style}>Sign IN</h2>
                 <form action="submit" className="flex flex-col items-center gap-5">
-                    <input type="text" style={inputstyle} placeholder="Enter Your Email" />
-                    <input type="text" style={inputstyle} placeholder="Enter Password" />
-                    <button className="bg-[#6495ED] hover:bg-blue-600 duration-200" style={buttonstyle}>Log IN</button>
-                    <div className="flex"><p>Create Account ?</p><Link to='/registration' className="font-bold text-blue-500 hover:text-blue-600">&nbsp;Sign UP</Link></div>
+                    <input className="placeholder:text-gray-500 text-blue-800 focus:outline focus:outline-violet-500" type="text" style={inputstyle} placeholder="Enter Your Email" />
+                    <input className="placeholder:text-gray-500 text-blue-800 focus:outline focus:outline-violet-500" type="text" style={inputstyle} placeholder="Enter Password" />
+                    <button className="bg-[#212edf] hover:bg-purple-600 duration-500" style={buttonstyle}>Log IN</button>
+                    <div className="flex"><p className="text-gray-600">Create Account ?</p><Link to='/registration' className="font-bold text-blue-500 hover:text-blue-600">&nbsp;Sign UP</Link></div>
                 </form>
             </div>
         </div>

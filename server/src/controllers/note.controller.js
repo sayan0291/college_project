@@ -57,7 +57,7 @@ const getNoteBySub = asyncHandler(async(req, res) => {
     .sort({createdAt: -1})
     .limit(limit)
     .skip((page-1) * limit)
-    .popiulate("subject", "subjectName")
+    .populate("subject", "subjectName")
 
     const count = await Note.countDocuments({ subject: subjectId });
 
@@ -113,7 +113,7 @@ const updateNotes = asyncHandler(async(req, res) => {
     
     if (noteNewFilePath) {
         try {
-            await cloudinary.uploader.destroy(note.noteUrl, {
+            await cloudinary.uploader.destroy(note.notePublicId, {
                 resource_type: "auto"
             })
         } catch (error) {
@@ -147,7 +147,6 @@ const updateNotes = asyncHandler(async(req, res) => {
         { new: true }
     )
     .populate("subject", "subjectName")
-    .populate("userName", "Name")
 
     return res.status(200).json(
         new apiResponse(200, updatedNote, "Notes updated successfully..")
@@ -164,7 +163,7 @@ const deleteNotes = asyncHandler(async(req, res) => {
     await Note.findByIdAndDelete(noteId);
 
     return res.status(200).json(
-        new apiError(200, "", "Note deleted successfully..")
+        new apiResponse(200, "", "Note deleted successfully..")
     )
 });
 

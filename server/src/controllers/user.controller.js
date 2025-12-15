@@ -23,7 +23,7 @@ const register = asyncHandler(async(req, res) => {
         throw new apiError(400, "Email or registration number is needed..");
     }
 
-    const existingUser = await User.find({$or: [{email}, {registrationNumber}]});
+    const existingUser = await User.findOne({$or: [{email}, {registrationNumber}]});
 
     if (existingUser) {
         throw new apiError(400, "User already exists..");
@@ -67,7 +67,7 @@ const logIn = asyncHandler(async(req, res) => {
         throw new apiError(400, "email or registration number is required..");
     }
 
-    const user = await User.find({$or: [{email}, {registrationNumber}]});
+    const user = await User.findOne({$or: [{email}, {registrationNumber}]});
     if (!user) {
         throw new apiError(400, "Register first..");
     }
@@ -152,7 +152,7 @@ const refreshAccessToken = asyncHandler(async(req, res) => {
             throw new apiError(400, "Token is invalid or expired..");
         }
 
-        const { accessToken, newRefreshToken } = await generateAccessAndRefreshToken(user._id);
+        const { accessToken, refreshToken: newRefreshToken } = await generateAccessAndRefreshToken(user._id);
 
         const option = {
             httpOnly: true,

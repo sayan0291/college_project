@@ -7,20 +7,20 @@ const Semester = require("../models/semester.model.js");
 const Note = require("../models/notes.model.js");
 
 const addDepartment = asyncHandler(async (req, res) => {
-  const { departmentName, year, isActive } = req.body;
+  const { departmentName, code, isActive } = req.body;
 
-  if (!departmentName || !year) {
-    throw new apiError(400, "Department name and year is required..");
+  if (!departmentName || !code) {
+    throw new apiError(400, "Department name and code is required..");
   }
 
-  const existingDepartment = await Department.findOne({ departmentName });
+  const existingDepartment = await Department.findOne({ $or: [{departmentName}, {code}] });
   if (existingDepartment) {
     throw new apiError(400, "Department name already exists..");
   }
 
   const department = await Department.create({
     departmentName,
-    year,
+    code,
     isActive: Boolean(isActive),
   });
 
@@ -70,7 +70,7 @@ const getDepartmentById = asyncHandler(async (req, res) => {
 
 const updateDepartment = asyncHandler(async (req, res) => {
   const { departmentId } = req.params;
-  const { departmentName, isActive } = req.body;
+  const { departmentName, code, isActive } = req.body;
 
   if (!departmentId) {
     throw new apiError(400, "Department id is required..");
@@ -84,6 +84,7 @@ const updateDepartment = asyncHandler(async (req, res) => {
 
   const updatedFields = {};
   if (departmentName) updatedFields.departmentName = departmentName;
+  if(code) updatedFields.code = code;
   if (typeof isActive === "boolean") updatedFields.isActive = isActive;
 
   const updatedDepartment = await Department.findByIdAndUpdate(

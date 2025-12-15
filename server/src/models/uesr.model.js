@@ -26,14 +26,14 @@ const userSchema = new Schema({
     department: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Department",
-        required: true
+        // required: true
     },
     semester: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Semester",
-        required: function() {
-            return this.role === "Student" // Only for students
-        }
+        // required: function() {
+        //     return this.role === "Student" // Only for students
+        // }
     },
     refreshToken: {
         type: String
@@ -43,7 +43,7 @@ const userSchema = new Schema({
 
 userSchema.pre("save", async function (next) {
     if (this.isModified("password")) {
-        this.password = await bcrypt.hash(this.password, 10)
+        this.password = bcrypt.hash(this.password, 10)
     }
     next();
 });

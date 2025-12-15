@@ -67,19 +67,17 @@ const logIn = asyncHandler(async(req, res) => {
         throw new apiError(400, "email or registration number is required..");
     }
 
-    if (!password) {
-        throw new apiError(400, "Password is required..");
-    }
-
     const user = await User.findOne({$or: [{email}, {registrationNumber}]});
     if (!user) {
         throw new apiError(400, "Register first..");
     }
 
-    const isPasswordValid = await user.isPasswordCorrect(password);
-    if (!isPasswordValid) {
-        throw new apiError(400, "Incorrect password..");
-    }
+    if (password) {
+        const isPasswordValid = await user.isPasswordCorrect(password);
+        if (!isPasswordValid) {
+            throw new apiError(400, "Incorrect password..");
+        }
+    };
 
     const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id);
 
@@ -154,7 +152,7 @@ const refreshAccessToken = asyncHandler(async(req, res) => {
             throw new apiError(400, "Token is invalid or expired..");
         }
 
-        const { accessToken, newRefreshToken } = await generateAccessAndRefreshToken(user._id);
+        const { accessToken, refreshToken: newRefreshToken } = await generateAccessAndRefreshToken(user._id);
 
         const option = {
             httpOnly: true,

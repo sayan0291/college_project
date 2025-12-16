@@ -10,7 +10,7 @@ export const inputstyle = {
     backgroundColor: "white",
     borderRadius: "6px",
     border: "1px solid #64B5F6",
-    width: "100%",
+    width: "80%",
     fontSize:"16px",
     color:"navy",
 }

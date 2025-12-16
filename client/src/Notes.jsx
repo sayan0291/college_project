@@ -1,4 +1,5 @@
 import { useState } from "react"
+import SectionHeading from "./SectionHeading"
 export const selectstyle = "p-2 bg-blue-200 rounded font-md text-blue-950 focus:outline focus:outline-violet-500"
 
 function Notes(){
@@ -9,15 +10,7 @@ function Notes(){
 
     return(
         <div className="px-10 py-5 font-serif">
-            <div className="relative w-fit mx-7 rounded-tl-md rounded-br-md gradient">
-            <h2 className="text-white font-bold text-lg p-3 uppercase">
-                Notes
-            </h2>
-            <span className="absolute -top-1 -right-1 flex">
-                <span className="absolute inline-flex h-5 w-5 animate-ping rounded-full bg-sky-300 opacity-75"></span>
-                <span className="relative inline-flex h-5 w-5 rounded-full bg-sky-400"></span>
-            </span>
-            </div>
+            <SectionHeading categories="NOTES" />
             <div className="flex justify-between p-2">
                 <div className="flex flex-col gap-5 m-5 padding-bottom">
                     <select className={selectstyle} value={sem} onChange={setChange}>

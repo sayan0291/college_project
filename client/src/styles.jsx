@@ -19,3 +19,4 @@ export const buttonstyle = {
     borderRadius: "20px",
     color: "white",
 }
+

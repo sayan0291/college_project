@@ -1,19 +1,11 @@
 import Home ,{aligncontainer,textalign} from "./Home"
+import SectionHeading from "./SectionHeading"
 
 function About(){
 
     return(
         <div className="text-center px-8 py-3 font-serif">
-            <div className="relative w-fit mx-7 rounded-tl-md rounded-br-md gradient">
-            <h2 className="text-white font-bold p-3 text-lg uppercase">
-                About
-            </h2>
-            <span className="absolute -top-1 -right-1 flex">
-                <span className="absolute inline-flex h-5 w-5 animate-ping rounded-full bg-sky-400 opacity-75"></span>
-                <span className="relative inline-flex h-5 w-5 rounded-full bg-sky-500"></span>
-            </span>
-            </div>
-
+            <SectionHeading categories="ABOUT" />
             <div className={aligncontainer} style={{height: "50vh"}}>
             <img className="w-1/2 image1" src="https://www.drmsithaldia.in/themes/images/carousel/banner2.jpg" alt="about-image" />
             <div className={textalign} data-aos="fade-left">

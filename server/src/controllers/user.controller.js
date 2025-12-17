@@ -76,9 +76,11 @@ const logIn = asyncHandler(async (req, res) => {
     throw new apiError(400, "email or registration number is required..");
   }
 
-  const user = await User.findOne({
-    $or: [{ email }, { registrationNumber }],
-  }).select("+password");
+  const query = [];
+  if(email) query.push({ email });
+  if(registrationNumber) query.push({ registrationNumber });
+
+  const user = await User.findOne({$or: query}).select("+password");
   if (!user) {
     throw new apiError(400, "Register first..");
   }
@@ -90,7 +92,7 @@ const logIn = asyncHandler(async (req, res) => {
     if (!password) {
       throw new apiError(400, "Password is required..");
     }
-    
+
     const isPasswordValid = await user.isPasswordCorrect(password);
     if (!isPasswordValid) {
       throw new apiError(400, "Incorrect password..");

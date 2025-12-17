@@ -10,8 +10,8 @@ const addSubject = asyncHandler(async(req, res) => {
     if (!subjectName || !departmentId || !semesterId) {
         throw new apiError(400, "All fielda are required..");
     }
-
-    const existingSub = await Subject.find({subjectName});
+    
+    const existingSub = await Subject.findOne({subjectName});
     if (existingSub) {
         throw new apiError(400, "Subject already exists..");
     }
@@ -45,7 +45,7 @@ const getSubjectBySem = asyncHandler(async(req, res) => {
     }
 
     return res.status(200).json(
-        new apiError(200, subjects, "Subjects fetched successfully..")
+        new apiResponse(200, subjects, "Subjects fetched successfully..")
     )
 });
 
@@ -62,7 +62,7 @@ const getSubjectById = asyncHandler(async(req, res) => {
     }
 
     return res.status(200).json(
-        new apiError(200, subject, "Subject fetched successfully..")
+        new apiResponse(200, subject, "Subject fetched successfully..")
     )
 });
 

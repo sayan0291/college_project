@@ -22,18 +22,20 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
+        required: true,
+      
     },
     department: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Department",
-        // required: true
+        required: true
     },
     semester: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Semester",
-        // required: function() {
-        //     return this.role === "Student" // Only for students
-        // }
+        required: function() {
+            return this.role === "Student" // Only for students
+        }
     },
     refreshToken: {
         type: String
@@ -42,9 +44,9 @@ const userSchema = new Schema({
 }, {timestamps: true});
 
 userSchema.pre("save", async function (next) {
-    if (this.isModified("password")) {
-        this.password = bcrypt.hash(this.password, 10)
-    }
+    if (!this.isModified("password")) return next();
+
+    this.password = await bcrypt.hash(this.password, 10);
     next();
 });
 

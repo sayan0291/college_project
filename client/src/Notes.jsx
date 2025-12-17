@@ -1,6 +1,6 @@
 import { useState } from "react"
 import SectionHeading from "./SectionHeading"
-import Registration,{ buttonhover, selectsection } from "./Registration"
+import { buttonhover, selectsection } from "./styles"
 
 function Notes(){
     const [sem,setSem] = useState("")

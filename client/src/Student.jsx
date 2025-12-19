@@ -7,7 +7,7 @@ import Errormessage from "./errorsmessage";
 function Student(){
     const {register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors,isSubmitting },
     } = useForm({mode: "onChange"});
 
     const onSubmit = (data) => console.log(data)
@@ -20,7 +20,7 @@ function Student(){
                 <form className={formsection} onSubmit={handleSubmit(onSubmit)}>
                     <Errormessage error={errormessages && {message: errormessages}} />
                     <input type="text" style={inputstyle} placeholder="Enter Your Registration N0" {...register("registration", {required: {value: true,message: "The Field is Required"},validate: value => value.length === 10 || "Registration no must have 10 chracters"})} />
-                    <button className={buttonhover} style={buttonstyle}>Enter</button>
+                    <button disabled={isSubmitting} className={buttonhover} style={buttonstyle}>Enter</button>
                     <div className="flex">
                         <p className="text-gray-600">Create Account ?</p>
                         <Link to='/studentregistration' className={changehover}>&nbsp;Sign UP</Link>

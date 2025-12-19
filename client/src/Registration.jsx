@@ -1,4 +1,4 @@
-import { data, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection} from "./styles"
 import Errormessage from "./errorsmessage"
@@ -8,7 +8,7 @@ function Registration(){
         register,
         handleSubmit,
         watch,
-        formState: { errors }
+        formState: { errors,isSubmitting }
     } = useForm({mode: "onChange"})
 
     const onSubmit = (data) => console.log(data);
@@ -35,7 +35,7 @@ function Registration(){
                         <option value="DEE">DEE</option>
                         <option value="DEE">DEE</option>
                     </select>
-                    <button style={buttonstyle} className={buttonhover}>Sign UP</button>
+                    <button disabled={isSubmitting} style={buttonstyle} className={buttonhover}>Sign UP</button>
                     <div className="flex"><p className="text-gray-600">Have an Account ?</p><Link to='/admin' className={changehover}>&nbsp;Log IN</Link></div>
                 </form>
             </div>

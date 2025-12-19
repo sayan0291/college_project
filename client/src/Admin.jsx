@@ -8,7 +8,7 @@ function Admin(){
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors,isSubmitting },
     } = useForm({mode: "onChange"});
 
     const errormessages = 
@@ -25,7 +25,7 @@ function Admin(){
                     <Errormessage error={errormessages && {message: errormessages}} />
                     <input type="text" style={inputstyle} placeholder="Enter Your Email" {...register("email",{required: {value: true, message: "Email is Required"},pattern:{value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,message: "Enter a valid email dress"}})}/>
                     <input type="text" style={inputstyle} placeholder="Enter Password" {...register("password",{required: {value: true,message: "Give your password"}})} />
-                    <button className={buttonhover} style={buttonstyle}>Log IN</button>
+                    <button disabled={isSubmitting} className={buttonhover} style={buttonstyle}>Log IN</button>
                     <div className="flex">
                         <p className="text-gray-600">Create Account ?</p>
                         <Link to='/registration' className={changehover}>&nbsp;Sign UP</Link>

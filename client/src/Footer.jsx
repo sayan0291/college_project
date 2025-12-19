@@ -13,7 +13,7 @@ function Footer(){
     const texthover = "font-bold text-blue-100 hover:text-gray-50 cursor-pointer"
     
     const icons = [
-        {icon: <FaFacebook />,link: "https://www.facebook.com/www.drmsithaldia.org/",design: "text-gray-100 hover:text-blue-200 transition"},
+        {icon: <FaFacebook />,link: "https://www.facebook.com/www.drmsithaldia.org/",design: "text-gray-100 hover:text-white transition"},
         {icon: <FaYoutube />,link: "https://www.youtube.com/",design: "text-red-600 hover:text-red-700 transition"},
         {icon: <FaTwitter />,link: "https://x.com/",design: "text-blue-500 hover:text-blue-600 transition"}
     ]

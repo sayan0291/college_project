@@ -29,14 +29,14 @@ function Registration(){
                     <select className={selectsection} {...register("select",{required: {value:true,message: "The Field is Required"}})}>
                         <option value="">Select Department</option>
                         <option value="DCST">DCST</option>
-                        <option value="DCHI">DCHI</option>
+                        <option value="DCHE">DCHE</option>
                         <option value="DEIE">DEIE</option>
-                        <option value="DEE">DEE</option>
-                        <option value="DEE">DEE</option>
+                        <option value="DCE">DCE</option>
+                        <option value="DME">DME</option>
                         <option value="DEE">DEE</option>
                     </select>
                     <button disabled={isSubmitting} style={buttonstyle} className={buttonhover}>Sign UP</button>
-                    <div className="flex"><p className="text-gray-600">Have an Account ?</p><Link to='/admin' className={changehover}>&nbsp;Log IN</Link></div>
+                    <div className="flex"><p className="text-gray-500">Have an Account ?</p><Link to='/admin' className={changehover}>&nbsp;Log IN</Link></div>
                 </form>
             </div>
         </div>

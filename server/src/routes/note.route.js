@@ -11,7 +11,7 @@ const verifyJwt = require("../middlewares/auth.middleware.js");
 const isTeacher = require("../middlewares/isTeacher.middleware.js");
 const upload = require("../middlewares/multer.middleware.js");
 
-router.post("/add", verifyJwt, isTeacher, upload.single("note"), addNotes);
+router.post("/add", verifyJwt, isTeacher, upload.single("noteUrl"), addNotes);
 router.get("/fetch", verifyJwt, getNoteBySub);
 router.get("/fetch/:noteId", verifyJwt, getNoteById);
 router.put("/update", verifyJwt, isTeacher, updateNotes);

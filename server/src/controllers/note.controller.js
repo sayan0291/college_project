@@ -32,7 +32,7 @@ const addNotes = asyncHandler(async(req, res) => {
         semester: semesterId,
         department: departmentId
     });
-
+    console.log(note);
     return res.status(201).json(
         new apiResponse(201, notes, "Note added successfully..")
     )

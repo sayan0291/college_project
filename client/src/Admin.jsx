@@ -24,10 +24,10 @@ function Admin(){
                 <form className={formsection} onSubmit={handleSubmit(onSubmit)}>
                     <Errormessage error={errormessages && {message: errormessages}} />
                     <input type="text" style={inputstyle} placeholder="Enter Your Email" {...register("email",{required: {value: true, message: "Email is Required"},pattern:{value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,message: "Enter a valid email dress"}})}/>
-                    <input type="text" style={inputstyle} placeholder="Enter Password" {...register("password",{required: {value: true,message: "Give your password"}})} />
+                    <input type="password" style={inputstyle} placeholder="Enter Password" {...register("password",{required: {value: true,message: "Give your password"}})} />
                     <button disabled={isSubmitting} className={buttonhover} style={buttonstyle}>Log IN</button>
                     <div className="flex">
-                        <p className="text-gray-600">Create Account ?</p>
+                        <p className="text-gray-500">Create Account ?</p>
                         <Link to='/registration' className={changehover}>&nbsp;Sign UP</Link>
                     </div>
                 </form>

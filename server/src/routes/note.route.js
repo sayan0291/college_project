@@ -12,8 +12,8 @@ const isTeacher = require("../middlewares/isTeacher.middleware.js");
 const upload = require("../middlewares/multer.middleware.js");
 
 router.post("/add", verifyJwt, isTeacher, upload.single("noteUrl"), addNotes);
-router.get("/fetch", verifyJwt, getNoteBySub);
-router.get("/fetch/:noteId", verifyJwt, getNoteById);
+router.get("/fetch/:subjectId", verifyJwt, getNoteBySub);
+router.get("/fetch/note/:noteId", verifyJwt, getNoteById);
 router.put("/update", verifyJwt, isTeacher, updateNotes);
 router.delete("/delete", verifyJwt, isTeacher, deleteNotes);
 

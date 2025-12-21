@@ -53,14 +53,14 @@ const getNoteBySub = asyncHandler(async(req, res) => {
         throw new apiError(404, "No such subject found..");
     }
 
-    const notes = await Note.find({ subject: subjectId })
+    const notes = await Note.findOne({ subject: subjectId })
     .sort({createdAt: -1})
     .limit(limit)
     .skip((page-1) * limit)
     .populate("subject", "subjectName")
 
     const count = await Note.countDocuments({ subject: subjectId });
-
+    
     if (!notes || notes.length === 0) {
         throw new apiError(400, "No  such notes found..");
     }
@@ -88,6 +88,7 @@ const getNoteById = asyncHandler(async(req, res) => {
     if (!note) {
         throw new apiError(404, "No such note found..");
     }
+    console.log(note);
 
     return res.status(200).json(
         new apiResponse(200, note, "Fetched successfully..")

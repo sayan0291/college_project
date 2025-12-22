@@ -11,9 +11,7 @@ function Admin(){
         formState: { errors,isSubmitting },
     } = useForm({mode: "onChange"});
 
-    const errormessages = 
-        errors.email?.message || errors.password?.message || "";
-    
+    const errormessages = errors.email?.message || errors.password?.message || "";
 
     const onSubmit = (data) => console.log(data)
 

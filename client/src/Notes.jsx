@@ -10,9 +10,8 @@ function Notes(){
 
     return(
         <div className="px-10 py-5 font-serif">
-            <SectionHeading categories="NOTES" />
             <div className="flex justify-between p-2">
-                <div className="flex flex-col gap-5 m-5 padding-bottom">
+                <div className="flex flex-col gap-5 m-5 bg-gray-300 padding-bottom">
                     <select className={selectsection} value={sem} onChange={setChange}>
                         <option value="">Select Sem</option>
                         <option value="1st Sem">1st Sem</option>

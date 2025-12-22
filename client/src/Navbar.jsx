@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import { NavLink } from "react-router-dom";
 import Navview from "./Navview";
 
 function Navbar(){
     const [open,setOpen] = useState(false)
+    useEffect(() => {
+        document.body.style.overflow = open ? "hidden" : "auto";
+      }, [open]);      
     
     return(
             <header className="flex justify-between items-center font-serif">
@@ -22,8 +25,8 @@ function Navbar(){
 
                 <Navview display="md:flex" />
                 <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>☰</button>
-                <ul className={`fixed top-0 right-0 z-50 h-screen w-64 bg-gray-900 text-white flex flex-col gap-6 p-6 pt-20 transition-transform duration-300 ease-in-out md:hidden ${open ? "translate-x-0" : "translate-x-full"}`} onClick={() => setOpen(false)} role="menu" aria-hidden={!open}>
-                <button className="absolute top-4 right-4 text-3xl" onClick={() => setOpen(false)} aria-label="Close menu">✕</button>
+                <ul className={`fixed top-0 left-0 z-50 h-screen w-64 bg-gray-900 text-white flex flex-col gap-6 p-6 pt-20 transition-transform duration-300 ease-in-out md:hidden ${open ? "translate-x-0" : "-translate-x-full"}`} onClick={() => setOpen(false)} role="menu" aria-hidden={!open}>
+                <button className="absolute top-4 right-4 text-3xl" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button>
 
                     <NavLink to="/home" onClick={() => setOpen(false)}>Home</NavLink>
                     <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>

@@ -24,10 +24,9 @@ export const buttonstyle = {
 }
 
 //home ,about
-export const aligncontainer = "flex justify-center gap-5 h-[70vh] mb-5"
-export const textalign = "flex flex-col text-start gap-1"
-export const headingstyle = "text-3xl text-blue-900 underline underline-offset-5"
-export const pstyle = "text-lg text-black"
+export const aligncontainer = "flex flex-col md:flex-row items-center justify-center gap-5 md:gap-6 mb-5 px-4 md:px-0 md:h-[auto]"
+export const textalign = "flex flex-col text-center justify-start md:text-start gap-2 md:gap-3"
+export const pstyle ="text-sm md:text-lg text-black leading-relaxed"
 
 //contact
 export const linkstyle = "font-bold text-blue-400 hover:text-blue-500 cursor-pointer"

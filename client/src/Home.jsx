@@ -11,7 +11,8 @@ function Home(){
     return(
         <div className='homepage font-serif'>
             <div className={aligncontainer}>
-            <img src={HomeImage1} className="w-1/2 image1" alt="MSIT Campus Image" />
+            <img src={HomeImage1} className="w-full md:w-1/2 image1" alt="MSIT Campus Image"/>
+
             <div className={textalign} data-aos="fade-left">
                 <SectionHeading categories="DR. Meghnad Saha Instite of Technology" color="bg-[linear-gradient(to_right,rgb(81,81,249)_0%,rgb(240,248,255)_90%)]" textcolor="text-black"/>
                 <p className={pstyle}>Dr. Meghnad Saha Institute of Technology was established in the year of 1998 with the aim to develop manpower in the field of Engineering & Technology to pace with the industrial growth of Haldia. The institute is well approved by AICTE. The academic programme & curriculum is affiliated & directly controlled by West Bengal State Council of Technical and Vocational Education and Skill Development (WBSCT&VE&SD).The institute is also under the direct administrative control of the Department of Technical Education & Training, Government of West Bengal. The institute upholds the standard of Technical Education by engaging qualified faculties & providing modern laboratory facilities.</p>
@@ -23,10 +24,12 @@ function Home(){
                 <p className='m-1 font-bold' data-aos="fade-right">(6th Oct,1893 - 16Feb,1956)</p>
                 <p className={pstyle} data-aos="fade-right">Dr. Meghnad Saha was a pioneering Indian astrophysicist whose groundbreaking Saha Ionization Equation transformed our understanding of stars and their spectra. A visionary scientist and nation-builder, he combined deep theoretical insight with a passion for scientific progress in India. His work laid the foundation for modern astrophysics and continues to inspire researchers around the world. Dr. Saha’s legacy shines brightly—much like the stars he devoted his life to understanding.</p>
             </div>
-            <img src={HomeImage2} className="image1" alt="Dr. Meghnad Saha Image" />
+            <img src={HomeImage2} className="w-1/2 md:w-1/3 image1" alt="Dr. Meghnad Saha Image"/>
+
             </div>
-            <div className='flex gap-5'>
-                <img className='w-[80vh] image1' src="https://hihshaldia.in/public/website/assets/images/backgrounds/vision.jpg" alt="vision-image"/>
+            <div className={aligncontainer}>
+            <img className="w-full md:w-[50%] image1" src="https://hihshaldia.in/public/website/assets/images/backgrounds/vision.jpg" alt="vision-image"/>
+
                 <div>
                     <SectionHeading categories="Our Vision" color="bg-[linear-gradient(to_right,rgb(74,156,188)_0%,rgb(240,248,255)_90%)]" textcolor="text-blue-900"/>
                     <div className={alignright} data-aos="fade-left">

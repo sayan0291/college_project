@@ -1,10 +1,10 @@
-import {aligncontainer,textalign} from "./styles"
+import {aligncontainer,textalign,formsection} from "./styles"
 import SectionHeading from "./SectionHeading"
 
 function About(){
 
     return(
-            <div className="text-center px-4 md:px-8 py-2 font-serif">
+            <div className={`text-center  font-serif px-8 py-4 ${formsection}`}>
               <div className={`${aligncontainer}`}>
                   <img className="w-full md:w-1/2 image1" src="https://www.drmsithaldia.in/themes/images/carousel/banner2.jpg" alt="about-image"/>
                 <div className="flex flex-col text-center md:text-left gap-3" data-aos="fade-left">

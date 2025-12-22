@@ -1,7 +1,7 @@
 import HomeImage1 from './assets/meghnad_saha.jpg'
 import HomeImage2 from './assets/meghnad_saha_statue.jpg'
 import HomeImage3 from './assets/right_10023784.png'
-import { aligncontainer,textalign,pstyle } from './styles'
+import { aligncontainer,textalign,pstyle,formsection } from './styles'
 import SectionHeading from './SectionHeading'
 
 
@@ -9,7 +9,7 @@ function Home(){
     const alignright = "align-section p-1 gap-3"
 
     return(
-        <div className='homepage font-serif'>
+        <div className={`homepage font-serif ${formsection}`}>
             <div className={aligncontainer}>
             <img src={HomeImage1} className="w-full md:w-1/2 image1" alt="MSIT Campus Image"/>
 

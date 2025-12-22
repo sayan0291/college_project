@@ -24,8 +24,8 @@ export const buttonstyle = {
 }
 
 //home ,about
-export const aligncontainer = "flex flex-col md:flex-row items-center justify-center gap-5 md:gap-6 mb-5 px-4 md:px-0 md:h-[auto]"
-export const textalign = "flex flex-col text-center justify-start md:text-start gap-2 md:gap-3"
+export const aligncontainer = "block md:flex justify-center gap-8 md:gap-5"
+export const textalign = "flex flex-col text-start"
 export const pstyle ="text-sm md:text-lg text-black leading-relaxed"
 
 //contact
@@ -37,7 +37,7 @@ export const maplink = "https://www.google.com/maps/place/Dr.+Meghnad+Saha+Insti
 
 //login
 export const firstSection = "w-full py-10 flex justify-center font-serif"
-export const secondSection = "px-10 bg-blue-100 flex flex-col gap-5 py-5 w-1/3 formborder"
+export const secondSection = "px-10 bg-blue-100 flex flex-col w-[60%] md:w-[30%] gap-5 py-5 w-1/3 formborder"
 export const buttonhover  = "bg-blue-600 hover:bg-indigo-500 duration-200"
 export const changehover = "font-bold text-blue-600 hover:text-indigo-500 duration-300"
 export const formsection = "flex flex-col items-center gap-5"

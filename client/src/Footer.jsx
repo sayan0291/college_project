@@ -20,7 +20,7 @@ function Footer(){
 
     return(
         <footer className='font-serif'>
-            <div className='flex justify-between pt-5 px-8'>
+            <div className='flex flex-col md:flex-row justify-between pt-5 px-8 gap-5'>
                 <div>
                     <img className="h-20 px-3" src={footerimage} alt="footer-image" />
                 </div>

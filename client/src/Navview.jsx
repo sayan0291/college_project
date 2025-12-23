@@ -2,6 +2,8 @@ import { NavLink } from "react-router-dom"
 
 
 export default function Navview(props){
+    const loggedin = false
+
     const baseStyle = "px-5 py-2.5 md:px-4 md:py-2 font-medium rounded-lg text-sm";
 
     const activeStyle = "bg-violet-600 text-white";
@@ -13,8 +15,9 @@ export default function Navview(props){
             <NavLink to="/home" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Home</NavLink>
             <NavLink to="/about" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>About</NavLink>
             <NavLink to="/contact" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Contact</NavLink>
-            <NavLink to="/notes" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Notes</NavLink>
-            <NavLink to="/login" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Login</NavLink>
+            {loggedin && (<NavLink to="/notes" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Notes</NavLink>)}
+            {loggedin && (<NavLink to="/profile" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Profile</NavLink>)}
+            {!loggedin && (<NavLink to="/login" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Login</NavLink>)}
         </nav>
     )
 }

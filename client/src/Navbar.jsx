@@ -7,6 +7,7 @@ function Navbar(){
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "auto";
       }, [open]);      
+      const loggedin = false
     
     return(
             <header className="flex justify-between items-center font-serif">
@@ -31,8 +32,9 @@ function Navbar(){
                     <NavLink to="/home" onClick={() => setOpen(false)}>Home</NavLink>
                     <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
                     <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
-                    <NavLink to="/notes" onClick={() => setOpen(false)}>Notes</NavLink>
-                    <NavLink to="/login" onClick={() => setOpen(false)}>Login</NavLink>
+                    {loggedin && (<NavLink to="/notes" onClick={() => setOpen(false)}>Notes</NavLink>)}
+                    {loggedin && (<NavLink to="/profile" onClick={() => setOpen(false)}>Profile</NavLink>)}
+                    {!loggedin && (<NavLink to="/login" onClick={() => setOpen(false)}>Login</NavLink>)}
                 </ul>                
             </header>
       );

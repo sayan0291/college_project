@@ -6,7 +6,7 @@ function About(){
     return(
             <div className={`text-center  font-serif px-8 py-4 ${formsection}`}>
               <div className={`${aligncontainer}`}>
-                  <img className="w-full md:w-1/2 image1" src="https://www.drmsithaldia.in/themes/images/carousel/banner2.jpg" alt="about-image"/>
+                  <img className="w-full md:w-[70vh] image1" src="https://www.drmsithaldia.in/themes/images/carousel/banner2.jpg" alt="about-image"/>
                 <div className="flex flex-col text-center md:text-left gap-3" data-aos="fade-left">
                   <SectionHeading categories="About Us" />
                   <p className={textalign}>

@@ -13,6 +13,7 @@ header{
 
 
 .image1{
+    padding-top: 8px;
     border-radius: 2px;
     /* box-shadow: 0 10px 20px rgb(101, 99, 99);   */
 }

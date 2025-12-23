@@ -32,7 +32,7 @@ const addNotes = asyncHandler(async(req, res) => {
         semester: semesterId,
         department: departmentId
     });
-    console.log(note);
+    
     return res.status(201).json(
         new apiResponse(201, notes, "Note added successfully..")
     )
@@ -159,6 +159,19 @@ const deleteNotes = asyncHandler(async(req, res) => {
     if (!noteId) {
         throw new apiError(400, "Note id is required...");
     }
+
+    const note = await Note.findById(noteId);
+    if(!note){
+        return new apiError(404, "No such note found..");
+    }
+
+   try {
+     await cloudinary.uploader.destroy(note.notePublicId, {
+        resource_type: "raw"
+    });
+   } catch (error) {
+    throw new apiError(500, "Something happend during delete the note..", error.message);
+   }
 
     await Note.findByIdAndDelete(noteId);
 

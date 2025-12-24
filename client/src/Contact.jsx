@@ -14,8 +14,8 @@ function Contact(){
     return(
         <div className="px-10 py-5 w-full">
                 <img className="px-45 my-5 rounded-md" src="https://www.drmsithaldia.in/themes/images/carousel/banner6.jpg" alt="whole-campus" />
-                <div className="flex flex-col justify-center w-full pl-100">
-                        <SectionHeading categories="Contact US" color="bg-[linear-gradient(to_right,rgb(16,1,74)_0%,rgb(240,248,255)_50%)]" textcolor="text-white"/>
+                <div className="flex flex-col justify-center  px-45">
+                        <SectionHeading categories="Contact US" />
                         <div className="align-section" data-aos="fade-left">
                             <img className={`${imagestyle} w-1/20 rounded-xl`} src={location} alt="website-icon" />
                             <a className={linkstyle} href={maplink} target="_blank" rel="noopener noreferrer">&nbsp;Debhog,Haldia Pin-721657,Purba Medinipur,WB,India</a>

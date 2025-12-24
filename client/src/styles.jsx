@@ -25,8 +25,8 @@ export const buttonstyle = {
 
 //home ,about
 export const aligncontainer = "block md:flex justify-center gap-8 md:gap-5"
-export const textalign = "flex flex-col text-start"
-export const pstyle ="text-sm md:text-lg text-black leading-relaxed"
+export const textalign = "flex flex-col text-start text-sm md:text-lg pl-3"
+export const pstyle ="text-sm md:text-lg text-black leading-relaxed pl-3"
 
 //contact
 export const linkstyle = "font-bold text-blue-400 hover:text-blue-500 cursor-pointer"

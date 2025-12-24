@@ -7,7 +7,7 @@ function Navbar(){
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "auto";
       }, [open]);      
-      const loggedin = false
+      const loggedin = true
     
     return(
             <header className="flex justify-between items-center font-serif">
@@ -20,11 +20,11 @@ function Navbar(){
 
                     <span className="relative font-serif text-xs sm:text-sm md:text-base leading-tight">
                         Dr. Meghnad Saha <br />
-                        Institute of Technology, Haldia
+                        Institute of Technology
                     </span>
                 </a>
 
-                <Navview display="md:flex" />
+                <Navview login={loggedin} display="md:flex" />
                 <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>☰</button>
                 <ul className={`fixed top-0 left-0 z-50 h-screen w-64 bg-gray-900 text-white flex flex-col gap-6 p-6 pt-20 transition-transform duration-300 ease-in-out md:hidden ${open ? "translate-x-0" : "-translate-x-full"}`} onClick={() => setOpen(false)} role="menu" aria-hidden={!open}>
                 <button className="absolute top-4 right-4 text-3xl" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button>

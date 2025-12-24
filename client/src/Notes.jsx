@@ -1,5 +1,4 @@
 import { useState } from "react"
-import SectionHeading from "./SectionHeading"
 import { buttonhover, selectsection } from "./styles"
 
 function Notes(){

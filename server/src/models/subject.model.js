@@ -8,11 +8,13 @@ const subjectSchema = new Schema({
     },
     department: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Department"
+        ref: "Department",
+        required: true
     },
     semester: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Semester"
+        ref: "Semester",
+        required: true
     }
     
 }, {timestamps: true});

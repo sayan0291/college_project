@@ -14,7 +14,8 @@ const uploadToCloudinary = async(localFilePath) => {
 
     try {
         const response = await cloudinary.uploader.upload(localFilePath, {
-            resource_type: "auto"
+            resource_type: "raw",
+            // flags: "attachmet: false"
         });
         return response;
     } catch (error) {

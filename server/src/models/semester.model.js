@@ -2,8 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const semesterSchema = new Schema({
-    semester: {
+    semesterName: {
         type: String,
+        required: true
+    },
+    number: {
+        type: Number,
         required: true
     },
     department: {

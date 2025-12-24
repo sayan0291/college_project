@@ -8,44 +8,39 @@ header{
 
 .homepage{
     align-items: center;
-    padding: 0 20px;
-    margin-bottom: 3rem;
+    padding: 20px 20px;
 }
 
-.size{
-    height: 70vh;
-    padding: 1rem 1.8rem;
-}
 
 .image1{
-    box-shadow: 0 10px 20px rgb(101, 99, 99);
+    padding-top: 8px;
+    border-radius: 2px;
+    /* box-shadow: 0 10px 20px rgb(101, 99, 99);   */
 }
 
 .padding-bottom{
-    padding-bottom: 15rem;
+    padding: 1rem 2rem 15rem;
+    border-radius: 5px;
 }
 
 .gradient{
     padding: 0 4rem;
     margin-bottom: 1.2rem;
-    background: linear-gradient(to right, rgb(9, 9, 104), rgb(167, 25, 233));
+    background: linear-gradient(60deg, rgb(9, 9, 104), rgb(186, 164, 197));
 }
-
-.centerize {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .align-section {
     display: flex;
-    align-items: center;
     margin: 10px;
+}
+
+
+.formborder{
+    border-radius: 5px;
+    box-shadow: 0 2px 14px rgba(106, 117, 148, 0.982);
 }
 
 .shadow{
     box-shadow: 0 1px 8px rgba(108, 121, 202, 0.573);
-   
 }
 
 

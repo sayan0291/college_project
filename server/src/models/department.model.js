@@ -4,11 +4,16 @@ const Schema = mongoose.Schema;
 const departmentSchema = new Schema({
     departmentName: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
+        unique: true
     },
-    year: {
-        type: Number,
-        required: true
+    code: {
+        type: String,
+        required: true,
+        trim: true,
+        uppercase: true,
+        unique: true
     },
     isActive: {
         type: Boolean,

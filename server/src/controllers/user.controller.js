@@ -22,13 +22,18 @@ const register = asyncHandler(async (req, res) => {
     email,
     registrationNumber,
     password,
-    role,
     department,
     semester,
   } = req.body;
 
   if (!email && !registrationNumber) {
     throw new apiError(400, "Email or registration number is needed..");
+  }
+
+  if (email) {
+    role = "Teacher"
+  } else if (registrationNumber) {
+    role = "Student"
   }
 
   const query = [];

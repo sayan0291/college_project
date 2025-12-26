@@ -41,7 +41,6 @@ const register = asyncHandler(async (req, res) => {
   if (registrationNumber) query.push({ registrationNumber });
 
   const existingUser = await User.findOne({ $or: query });
-  // console.log(existingUser);
   if (existingUser) {
     throw new apiError(400, "User already exists..");
   }

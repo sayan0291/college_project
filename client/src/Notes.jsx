@@ -2,6 +2,7 @@ import { useState } from "react"
 import { buttonhover, selectsection } from "./styles"
 
 function Notes(){
+
     const [sem,setSem] = useState("")
     const setChange = (event) => {
         setSem(event.target.value)

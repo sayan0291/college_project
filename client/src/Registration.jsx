@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
+import { useNavigate } from 'react-router-dom'
 import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection} from "./styles"
 import Errormessage from "./errorsmessage"
+import onRegisterSubmit from "./RegistrationHandler"
 
 function Registration(){
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -11,7 +14,9 @@ function Registration(){
         formState: { errors,isSubmitting }
     } = useForm({mode: "onChange"})
 
-    const onSubmit = (data) => console.log(data);
+    const handleFormSubmit = async (data) => {
+        await onRegisterSubmit(data,navigate)
+    }
 
     const errormessages = errors.email?.message || errors.password?.message || errors.confirmpassword?.message || errors.select?.message || ""
     
@@ -21,7 +26,7 @@ function Registration(){
         <div className={firstSection}>
             <div className={secondSection}>
                 <h2 style={h2style}>Sign UP</h2>
-                <form className={formsection} onSubmit={handleSubmit(onSubmit)}>
+                <form className={formsection} onSubmit={handleSubmit(handleFormSubmit)}>
                     <Errormessage error={errormessages && {message: errormessages}} />
                     <input type="text" style={inputstyle} placeholder="Enter Your Email" {...register("email",{required: {value:true,message: "The field is required"},pattern: {value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,message: "Enter a valid email address"}})}/>
                     <input type="text" style={inputstyle} placeholder="Enter Password" {...register("password",{required: {value:true,message: "The field is required"},minLength: {value:5,message: "Password must have 5 characters"},maxLength: {value:9,message: "Password must have 9 characters"}})} />

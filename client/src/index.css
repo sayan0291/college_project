@@ -30,7 +30,7 @@ header{
 }
 .align-section {
     display: flex;
-    margin: 10px;
+    align-items: center;
 }
 
 

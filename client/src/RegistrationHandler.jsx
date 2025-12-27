@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-async function onSubmit(data,navigate){
+async function onRegisterSubmit(data,navigate){
     try{
         await axios.post(
             "http://localhost:8080/user/register",
@@ -10,8 +10,9 @@ async function onSubmit(data,navigate){
         alert("Register Succesfully")
         navigate('/home',{replace: true})
     }catch (error){
+        console.log(error);
         alert(`Registration Unseccessfull ${error}`)
     }
 }
 
-export default onSubmit;
+export default onRegisterSubmit;

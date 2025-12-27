@@ -13,27 +13,27 @@ function Contact(){
     const link = "https://www.drmsithaldia.in/"
     return(
         <div className="px-10 py-5 w-full">
-                <img className="px-45 my-5 rounded-md" src="https://www.drmsithaldia.in/themes/images/carousel/banner6.jpg" alt="whole-campus" />
-                <div className="flex flex-col justify-center  px-45">
+                <img className="md:px-45 my-5 rounded-md" src="https://www.drmsithaldia.in/themes/images/carousel/banner6.jpg" alt="whole-campus" />
+                <div className="flex flex-col justify-center px-0 md:px-45">
                         <SectionHeading categories="Contact US" />
-                        <div className="align-section" data-aos="fade-left">
-                            <img className={`${imagestyle} w-1/20 rounded-xl`} src={location} alt="website-icon" />
+                        <div className="align-section m-1 md:m-2" data-aos="fade-left">
+                            <img className={`${imagestyle} w-1/14 md:w-1/20`} src={location} alt="website-icon" />
                             <a className={linkstyle} href={maplink} target="_blank" rel="noopener noreferrer">&nbsp;Debhog,Haldia Pin-721657,Purba Medinipur,WB,India</a>
                         </div>
-                        <div className="align-section" data-aos="fade-left">
-                            <img className={`${imagestyle} w-1/20`} src={website} alt="website-icon" />
+                        <div className="align-section m-1 md:m-2" data-aos="fade-left">
+                            <img className={`${imagestyle} w-1/14 md:w-1/20`} src={website} alt="website-icon" />
                             <a className={linkstyle} href={link} target="_blank" rel="noopener noreferrer">&nbsp;www.drmsithaldia.in</a>
                         </div>
-                        <div className="align-section" data-aos="fade-left">
-                            <img className={`${imagestyle} w-1/20`} src={phone} alt="website-icon" />
-                            <a className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" href="tel:" target="_blank" rel="noopener noreferrer">&nbsp;03224-253064</a>
+                        <div className="align-section m-1 md:m-2" data-aos="fade-left">
+                            <img className={`${imagestyle} w-1/14 md:w-1/20`} src={phone} alt="website-icon" />
+                            <a className={linkstyle} href="tel:" target="_blank" rel="noopener noreferrer">&nbsp;03224-253064</a>
                         </div>
-                        <div className="align-section" data-aos="fade-left">
-                            <img className={`${imagestyle} w-1/20`} src={email} alt="website-icon" />
+                        <div className="align-section m-1 md:m-2" data-aos="fade-left">
+                            <img className={`${imagestyle} w-1/14 md:w-1/20`} src={email} alt="website-icon" />
                             <a className={linkstyle} href="mailto:drmsithaldia@yahoo.com" target="_blank" rel="noopener noreferrer">&nbsp;drmsithaldia@yahoo.com</a>
                         </div>
-                        <div className="align-section" data-aos="fade-left">
-                            <img className={`${imagestyle} w-1/20`} src={email} alt="website-icon" />
+                        <div className="align-section m-1 md:m-2" data-aos="fade-left">
+                            <img className={`${imagestyle} w-1/14 md:w-1/20`} src={email} alt="website-icon" />
                             <a className={linkstyle} href="mailto:drmsithaldia.tpc@gmail.com" target="_blank" rel="noopener noreferrer">&nbsp;drmsithaldia.tpc@gmail.com</a>
                         </div>
                     </div>

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { useNavigate } from 'react-router-dom'
 import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection} from "./styles"
 import Errormessage from "./errorsmessage"
-import onSubmit from "./RegistrationHandler"
+import onRegisterSubmit from "./RegistrationHandler"
 
 function Registration(){
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ function Registration(){
     } = useForm({mode: "onChange"})
 
     const handleFormSubmit = async (data) => {
-        await onSubmit(data,navigate)
+        await onRegisterSubmit(data,navigate)
     }
 
     const errormessages = errors.email?.message || errors.password?.message || errors.confirmpassword?.message || errors.select?.message || ""

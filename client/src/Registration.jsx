@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { useNavigate } from 'react-router-dom'
-import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection} from "./styles"
+import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection ,departments} from "./styles"
 import Errormessage from "./errorsmessage"
 import onRegisterSubmit from "./RegistrationHandler"
+import { useState } from "react"
 
 function Registration(){
     const navigate = useNavigate();
+    const [apiError,setapiError] = useState("")
     const {
         register,
         handleSubmit,
@@ -15,10 +17,10 @@ function Registration(){
     } = useForm({mode: "onChange"})
 
     const handleFormSubmit = async (data) => {
-        await onRegisterSubmit(data,navigate)
+        await onRegisterSubmit(data,navigate,setapiError)
     }
 
-    const errormessages = errors.email?.message || errors.password?.message || errors.confirmpassword?.message || errors.select?.message || ""
+    const errormessages = errors.email?.message || errors.password?.message || errors.confirmpassword?.message || errors.select?.message || apiError || ""
     
     const passwordvalue = watch("password")
 
@@ -31,14 +33,8 @@ function Registration(){
                     <input type="text" style={inputstyle} placeholder="Enter Your Email" {...register("email",{required: {value:true,message: "The field is required"},pattern: {value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,message: "Enter a valid email address"}})}/>
                     <input type="text" style={inputstyle} placeholder="Enter Password" {...register("password",{required: {value:true,message: "The field is required"},minLength: {value:5,message: "Password must have 5 characters"},maxLength: {value:9,message: "Password must have 9 characters"}})} />
                     <input type="text" style={inputstyle} placeholder="Confirm Password" {...register("confirmpassword",{required: {value: true,message:"The field is required"},validate: value => value === passwordvalue || "Password do not match"})}/>
-                    <select className={selectsection} {...register("select",{required: {value:true,message: "The Field is Required"}})}>
-                        <option value="">Select Department</option>
-                        <option value="DCST">DCST</option>
-                        <option value="DCHE">DCHE</option>
-                        <option value="DEIE">DEIE</option>
-                        <option value="DCE">DCE</option>
-                        <option value="DME">DME</option>
-                        <option value="DEE">DEE</option>
+                    <select className={selectsection} {...register("department",{required: {value:true,message: "The Field is Required"}})}>
+                        {departments.map((obj,index) => (<option key={index} value={obj.Value}>{obj.name}</option>))}
                     </select>
                     <button disabled={isSubmitting} style={buttonstyle} className={buttonhover}>Sign UP</button>
                     <div className="flex"><p className="text-gray-500">Have an Account ?</p><Link to='/admin' className={changehover}>&nbsp;Log IN</Link></div>

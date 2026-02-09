@@ -10,7 +10,7 @@ export const inputstyle = {
     backgroundColor: "white",
     borderRadius: "8px",
     border: "1px solid #64B5F6",
-    width: "90%",
+    width: "100%",
     fontSize:"15px",
     color:"navy",
     outline:"none",
@@ -37,9 +37,40 @@ export const maplink = "https://www.google.com/maps/place/Dr.+Meghnad+Saha+Insti
 
 //login
 export const firstSection = "w-full py-10 flex justify-center font-serif"
-export const secondSection = "px-10 bg-blue-100 flex flex-col w-[60%] md:max-w-[30%] gap-5 py-5 w-1/3 formborder"
+export const secondSection = "px-10 bg-blue-100 flex flex-col w-[400px] gap-5 py-5 formborder"
 export const buttonhover  = "bg-blue-600 hover:bg-indigo-500 duration-200"
 export const changehover = "font-bold text-blue-600 hover:text-indigo-500 duration-300"
 export const formsection = "flex flex-col items-center gap-5"
 export const selectsection = "py-2 px-3 bg-stone-100 rounded font-md text-blue-950 outline-none"
 
+
+//departments 
+export const departments = [
+    {name:"Select Department", Value: ""},
+    {name:"DCST", Value: "DCST"},
+    {name:"DCHE", Value: "DCHE"},
+    {name:"DEIE", Value: "DEIE"},
+    {name:"DCE", Value: "DCE"},
+    {name:"DME", Value: "DME"},
+    {name:"DEE", Value: "DEE"}
+]
+
+
+//semesters
+export const semesters = [
+    {name:"Select Semester", value:""},
+    {name:"1st Sem", value:"1st Sem"},
+    {name:"2nd Sem", value:"2nd Sem"},
+    {name:"3rd Sem", value:"3rd Sem"},
+    {name:"4th Sem", value:"4th Sem"},
+    {name:"5th Sem", value:"5h Sem"}
+]
+
+//visions
+export const visions = [
+    {name: "vision1",value:"To deliver industry-relevant technical education that transforms students into skilled professionals ready for tomorrow's challenges."},
+    {name: "vision2",value:"To cultivate innovation throughh ands-onlearning experiences that bridge theoretical knowledge with practical applications."},
+    {name: "vision3",value:"To instill ethical leadership values alongside technical expertise, preparing graduates who positively impact society."},
+    {name: "vision4",value:"To establish meaningful industry partnerships that enhance learning and employment outcomes."},
+    {name: "vision5",value:"To empower students with relevant knowledge and values that drive regional technological advancement."},
+]

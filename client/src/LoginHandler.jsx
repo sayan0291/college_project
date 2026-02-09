@@ -1,17 +1,18 @@
 import axios from 'axios'
 
-async function Onloginsubmit(data,navigate){
+async function Onloginsubmit(data,navigate,setapiError){
     try{
         await axios.post(
-            "http://localhost:8080/user/login",
+            "/user/login",
             data,
             {withCredentials: true}
         )
         alert("login Succesfully")
         navigate('/home',{replace: true})
     }catch (error){
-        console.log(error);
-        alert(`login Unseccessfull ${error}`)
+        const msg = error.response?.data?.message || error.message || "Registration Failed"
+        console.log(error)
+        setapiError(msg)
     }
 }
 

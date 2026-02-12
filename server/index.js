@@ -8,6 +8,7 @@ const departmentRoute = require("./src/routes/department.route.js");
 const semRoute = require("./src/routes/semester.route.js");
 const subRoute = require("./src/routes/subject.route.js");
 const noteRoute = require("./src/routes/note.route.js");
+const errorHandler = require("./src/middlewares/error.middleware.js");
 
 const app = express();
 const port = process.env.PORT;
@@ -25,6 +26,8 @@ app.use("/department", departmentRoute);
 app.use("/semester", semRoute);
 app.use("/subject", subRoute);
 app.use("/note", noteRoute);
+
+app.use(errorHandler);
 
 connectDb()
 .then(() => {

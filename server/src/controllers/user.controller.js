@@ -30,6 +30,7 @@ const register = asyncHandler(async (req, res) => {
     throw new apiError(400, "Email or registration number is needed..");
   }
 
+  let role;
   if (email) {
     role = "Teacher"
   } else if (registrationNumber) {

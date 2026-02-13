@@ -108,6 +108,10 @@ const logIn = asyncHandler(async (req, res) => {
     if (!registrationNumber) {
         throw new apiError(400, "Registration Number is required..");
     }
+    const isPasswordValid = await user.isPasswordCorrect(password);
+    if (!isPasswordValid) {
+      throw new apiError(400, "Incorrect password..");
+    }
   }
 
   const { accessToken, refreshToken } = await generateAccessAndRefreshToken(

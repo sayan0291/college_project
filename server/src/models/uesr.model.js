@@ -22,16 +22,15 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        required: true,
       
     },
     department: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: "Department",
         required: true
     },
     semester: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: "Semester",
         required: function() {
             return this.role === "Student" // Only for students
@@ -45,10 +44,14 @@ const userSchema = new Schema({
 
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) return next();
-
+  
+    if (!this.password) {
+      return next(new Error("Password is required"));
+    }
+  
     this.password = await bcrypt.hash(this.password, 10);
     next();
-});
+  });  
 
 userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password);

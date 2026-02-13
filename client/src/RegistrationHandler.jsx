@@ -10,7 +10,9 @@ async function onRegisterSubmit(data,navigate,setapiError){
         alert("Register Succesfully")
         navigate('/home',{replace: true})
     }catch (error){
+        console.log(error)
         const msg = error.response?.data?.message || error.message || "Login Failed";
+        console.log(msg)
         setapiError(msg)
     }
 }

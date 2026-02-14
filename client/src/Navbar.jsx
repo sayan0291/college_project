@@ -7,7 +7,7 @@ function Navbar(){
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "auto";
       }, [open]);      
-      const loggedin = true
+      const loggedin = false
     
     return(
             <header className="flex justify-between items-center font-serif">

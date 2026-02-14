@@ -10,7 +10,7 @@ function Footer(){
     const contactsection = "flex items-center gap-3"
     const iconsection = "p-3 border rounded-4xl bg-white hover:bg-yellow-50"
     const iconhover = "text-blue-900 text-xm hover:text-green-700 transition-transform duration-300 hover:scale-150"
-    const texthover = "font-bold text-blue-100 hover:text-gray-50 cursor-pointer"
+    const texthover = "font-bold text-blue-100 md:text-base text-sm hover:text-gray-50 cursor-pointer"
     
     const icons = [
         {icon: <FaFacebook />,link: "https://www.facebook.com/www.drmsithaldia.org/",design: "text-gray-100 hover:text-white transition"},
@@ -20,12 +20,12 @@ function Footer(){
 
     return(
         <footer className='font-serif'>
-            <div className='flex flex-col md:flex-row justify-between pt-5 px-8 gap-5'>
+            <div className='flex flex-col md:flex-row justify-between pt-5 px-2'>
                 <div>
                     <img className="h-20 px-3" src={footerimage} alt="footer-image" />
                 </div>
-                <div className={textalign} style={{gap: "8px"}}>
-                    <h2 className='text-start text-blue-50 text-xl font-bold pb-4'>Contact</h2>
+                <div className={textalign} style={{gap: "2px"}}>
+                    <h2 className='text-start text-blue-50 text-xl font-bold pb-3'>Contact</h2>
                     <div className={contactsection}>
                         <div className={iconsection}>
                             <FaPhone className={iconhover} />

@@ -1,7 +1,8 @@
 import { useState } from "react"
-import { buttonhover, selectsection } from "./styles"
+import { buttonhover, selectsection , semesters } from "./styles"
 
 function Notes(){
+
     const [sem,setSem] = useState("")
     const setChange = (event) => {
         setSem(event.target.value)
@@ -12,13 +13,7 @@ function Notes(){
             <div className="flex justify-between p-2">
                 <div className="flex flex-col gap-5 m-5 bg-gray-300 padding-bottom">
                     <select className={selectsection} value={sem} onChange={setChange}>
-                        <option value="">Select Sem</option>
-                        <option value="1st Sem">1st Sem</option>
-                        <option value="2nd Sem">2nd Sem</option>
-                        <option value="3rd Sem">3rd Sem</option>
-                        <option value="4th Sem">4th Sem</option>
-                        <option value="5th Sem">5th Sem</option>
-                        <option value="6th Sem">6th Sem</option>
+                        {semesters.map((obj,index) => (<option key={index} value={obj.value}>{obj.name}</option>))}
                     </select>
                     <button class={buttonhover} style={{padding: "4px 5px",borderRadius: "5px"}}>Enter</button>
                 </div>

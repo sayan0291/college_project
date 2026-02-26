@@ -4,10 +4,12 @@ import { h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover
 import {useForm} from 'react-hook-form'
 import Errormessage from "./errorsmessage"
 import onRegisterSubmit from "./RegistrationHandler"
+import { useUser } from "./UserContext"
 
 
 function StudentReg(){
     const navigate = useNavigate()
+    const { login } = useUser()
     const [apiError,setapiError] = useState("")
     const {
         register,
@@ -17,7 +19,7 @@ function StudentReg(){
     } = useForm({mode: "onChange"});
 
     const handleFormSubmit = (data) => {
-        onRegisterSubmit(data,navigate,setapiError)
+        onRegisterSubmit(data, navigate, setapiError, login)
     }
 
     const passwordvalue = watch("password")

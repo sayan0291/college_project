@@ -63,7 +63,8 @@ export const semesters = [
     {name:"2nd Sem", value:"2nd Sem"},
     {name:"3rd Sem", value:"3rd Sem"},
     {name:"4th Sem", value:"4th Sem"},
-    {name:"5th Sem", value:"5h Sem"}
+    {name:"5th Sem", value:"5th Sem"},
+    {name:"6th Sem", value:"6th Sem"},
 ]
 
 //visions

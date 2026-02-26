@@ -15,8 +15,9 @@ export default function Navview(props){
             <NavLink to="/about" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>About</NavLink>
             <NavLink to="/contact" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Contact</NavLink>
             {props.login && (<NavLink to="/notes" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Notes</NavLink>)}
-            {props.login && (<NavLink to="/profile" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Profile</NavLink>)}
             {props.login || (<NavLink to="/login" className={({isActive}) => `${baseStyle} ${isActive ? activeStyle:inactiveStyle}`}>Login</NavLink>)}
+            {props.login && (<NavLink className={`${baseStyle} bg-red-400`} onClick={() => { logout(); }}>Logout</NavLink>)}
+
         </nav>
     )
 }

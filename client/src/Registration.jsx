@@ -5,9 +5,11 @@ import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,
 import Errormessage from "./errorsmessage"
 import onRegisterSubmit from "./RegistrationHandler"
 import { useState } from "react"
+import { useUser } from "./UserContext"
 
 function Registration(){
     const navigate = useNavigate();
+    const { login } = useUser()
     const [apiError,setapiError] = useState("")
     const {
         register,
@@ -17,7 +19,7 @@ function Registration(){
     } = useForm({mode: "onChange"})
 
     const handleFormSubmit = async (data) => {
-        await onRegisterSubmit(data,navigate,setapiError)
+        await onRegisterSubmit(data, navigate, setapiError, login)
     }
 
     const errormessages = errors.email?.message || errors.password?.message || errors.confirmpassword?.message || errors.select?.message || apiError || ""

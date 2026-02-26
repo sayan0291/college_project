@@ -4,20 +4,24 @@ import { useForm } from "react-hook-form"
 import Errormessage from './errorsmessage'
 import { useNavigate } from "react-router-dom"
 import Onloginsubmit from "./LoginHandler"
+import { useUser } from './UserContext'
+import { useState } from "react"
 
 
 function Admin(){
     const navigate = useNavigate()
+    const { login } = useUser()
+    const [apiError, setapiError] = useState("")
     const {
         register,
         handleSubmit,
         formState: { errors,isSubmitting },
     } = useForm({mode: "onChange"});
 
-    const errormessages = errors.email?.message || errors.password?.message || "";
+    const errormessages = errors.email?.message || errors.password?.message || apiError || "";
 
     const handleloginSubmit = async (data) => {
-        Onloginsubmit(data,navigate)
+        Onloginsubmit(data, navigate, setapiError, login)
     }
 
     return(

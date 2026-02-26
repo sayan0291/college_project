@@ -1,13 +1,16 @@
 import { useEffect,useState } from "react";
 import { NavLink } from "react-router-dom";
 import Navview from "./Navview";
+import { useUser } from "./UserContext";
 
 function Navbar(){
     const [open,setOpen] = useState(false)
+    const { isLoggedIn, logout } = useUser()
+
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "auto";
       }, [open]);      
-      const loggedin = false
+    
     
     return(
             <header className="flex justify-between items-center font-serif">
@@ -24,7 +27,7 @@ function Navbar(){
                     </span>
                 </a>
 
-                <Navview login={loggedin} display="md:flex" />
+                <Navview login={isLoggedIn} display="md:flex items-center" />
                 <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>☰</button>
                 <ul className={`fixed top-0 left-0 z-50 h-screen w-64 bg-gray-900 text-white flex flex-col gap-6 p-6 pt-20 transition-transform duration-300 ease-in-out md:hidden ${open ? "translate-x-0" : "-translate-x-full"}`} onClick={() => setOpen(false)} role="menu" aria-hidden={!open}>
                 <button className="absolute top-4 right-4 text-3xl" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button>
@@ -32,9 +35,9 @@ function Navbar(){
                     <NavLink to="/home" onClick={() => setOpen(false)}>Home</NavLink>
                     <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
                     <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
-                    {loggedin && (<NavLink to="/notes" onClick={() => setOpen(false)}>Notes</NavLink>)}
-                    {loggedin && (<NavLink to="/profile" onClick={() => setOpen(false)}>Profile</NavLink>)}
-                    {!loggedin && (<NavLink to="/login" onClick={() => setOpen(false)}>Login</NavLink>)}
+                    {isLoggedIn && (<NavLink to="/notes" onClick={() => setOpen(false)}>Notes</NavLink>)}
+                    {!isLoggedIn && (<NavLink to="/login" onClick={() => setOpen(false)}>Login</NavLink>)}
+                    {isLoggedIn && (<button onClick={() => { logout(); setOpen(false); }} className="text-left">Logout</button>)}
                 </ul>                
             </header>
       );

@@ -5,10 +5,12 @@ import Errormessage from "./errorsmessage";
 import Onloginsubmit from "./LoginHandler";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useUser } from './UserContext'
 
 
 function Student(){
     const navigate = useNavigate()
+    const { login } = useUser()
     const [apiError,setapiError] = useState("")
 
     const {register,
@@ -17,7 +19,7 @@ function Student(){
     } = useForm({mode: "onChange"});
 
     const handleFormSubmit = (data) =>{
-        Onloginsubmit(data,navigate,setapiError)
+        Onloginsubmit(data, navigate, setapiError, login)
     }
     const errormessages = errors.registrationNumber?.message || errors.password?.message || apiError || "";
 

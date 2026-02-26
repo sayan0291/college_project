@@ -15,6 +15,7 @@ import Student from './Student'
 import { Route, Routes } from 'react-router-dom'
 import Registration from './Registration'
 import StudentReg from './StudentReg'
+import { UserProvider } from './UserContext'
 
 function App() {
 
@@ -28,23 +29,25 @@ function App() {
   }, []);
   
   return (
-    <>
-      <Navbar />
-      <Notice />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/notes' element={<Notes />} />
-        <Route path='/Login' element={<Login />} />
-        <Route path='/admin' element={<Admin />} />
-        <Route path='/student' element={<Student />} />
-        <Route path='/studentregistration' element={<StudentReg />} />
-        <Route path='/registration' element={<Registration />} />
-      </Routes>
-      <Footer />
-    </>
+    <UserProvider>
+      <>
+        <Navbar />
+        <Notice />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/notes' element={<Notes />} />
+          <Route path='/Login' element={<Login />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/student' element={<Student />} />
+          <Route path='/studentregistration' element={<StudentReg />} />
+          <Route path='/registration' element={<Registration />} />
+        </Routes>
+        <Footer />
+      </>
+    </UserProvider>
   )
 }
 

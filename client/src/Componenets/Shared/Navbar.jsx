@@ -1,11 +1,12 @@
 import { useEffect,useState } from "react";
 import { NavLink } from "react-router-dom";
 import Navview from "./Navview";
-import { useUser } from "./UserContext";
+import { useUser } from "../../Context/UserContext.jsx";
 
 function Navbar(){
     const [open,setOpen] = useState(false)
     const { isLoggedIn, logout } = useUser()
+
 
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "auto";
@@ -27,7 +28,7 @@ function Navbar(){
                     </span>
                 </a>
 
-                <Navview login={isLoggedIn} display="md:flex items-center" />
+                <Navview display="md:flex items-center" />
                 <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>☰</button>
                 <ul className={`fixed top-0 left-0 z-50 h-screen w-64 bg-gray-900 text-white flex flex-col gap-6 p-6 pt-20 transition-transform duration-300 ease-in-out md:hidden ${open ? "translate-x-0" : "-translate-x-full"}`} onClick={() => setOpen(false)} role="menu" aria-hidden={!open}>
                 <button className="absolute top-4 right-4 text-3xl" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button>

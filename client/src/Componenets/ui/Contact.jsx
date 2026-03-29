@@ -1,9 +1,9 @@
-import { linkstyle,imagestyle } from "./styles"
-import SectionHeading from "./SectionHeading"
-import website from "./assets/localization.png"
-import phone from "./assets/telephone.png"
-import email from "./assets/mail.png"
-import location from "./assets/location.jpg"
+import { linkstyle,imagestyle } from "../styles.jsx"
+import SectionHeading from "../ui/SectionHeading.jsx"
+import website from "../../assets/localization.png"
+import phone from "../../assets/telephone.png"
+import email from "../../assets/mail.png"
+import location from "../../assets/location.jpg"
 
 
 

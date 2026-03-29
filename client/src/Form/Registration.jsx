@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { useNavigate } from 'react-router-dom'
-import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection ,departments} from "./styles"
-import Errormessage from "./errorsmessage"
-import onRegisterSubmit from "./RegistrationHandler"
+import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection ,departments} from "../Componenets/styles.jsx"
+import Errormessage from "../Form/FormHandler/errorsmessage.jsx"
+import onRegisterSubmit from "../Form/FormHandler/RegistrationHandler.jsx"
 import { useState } from "react"
-import { useUser } from "./UserContext"
+import { useUser } from "../Context/UserContext.jsx"
 
 function Registration(){
     const navigate = useNavigate();

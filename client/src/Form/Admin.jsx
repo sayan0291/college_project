@@ -1,10 +1,10 @@
 import { data, Link } from "react-router-dom"
-import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection} from "./styles"
+import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection} from "../Componenets/styles.jsx"
 import { useForm } from "react-hook-form"
-import Errormessage from './errorsmessage'
+import Errormessage from '../Form/FormHandler/errorsmessage.jsx'
 import { useNavigate } from "react-router-dom"
-import Onloginsubmit from "./LoginHandler"
-import { useUser } from './UserContext'
+import Onloginsubmit from "../Form/FormHandler/LoginHandler.jsx"
+import { useUser } from '../Context/UserContext.jsx'
 import { useState } from "react"
 
 

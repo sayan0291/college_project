@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
-import {h2style,inputstyle,buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection} from "./styles"
+import {h2style,inputstyle,buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection} from "../Componenets/styles.jsx"
 import { useForm } from 'react-hook-form'
-import Errormessage from "./errorsmessage";
-import Onloginsubmit from "./LoginHandler";
+import Errormessage from "../Form/FormHandler/errorsmessage.jsx";
+import Onloginsubmit from "../Form/FormHandler/LoginHandler.jsx";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useUser } from './UserContext'
+import { useUser } from '../Context/UserContext.jsx'
 
 
 function Student(){

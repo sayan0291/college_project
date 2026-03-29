@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { buttonhover, selectsection , semesters } from "./styles"
+import { buttonhover, selectsection , semesters } from "../styles.jsx"
+import FileUpload from "./FileUpload.jsx"
 
 function Notes(){
 
@@ -15,10 +16,10 @@ function Notes(){
                     <select className={selectsection} value={sem} onChange={setChange}>
                         {semesters.map((obj,index) => (<option key={index} value={obj.value}>{obj.name}</option>))}
                     </select>
-                    <button class={buttonhover} style={{padding: "4px 5px",borderRadius: "5px"}}>Enter</button>
+                    <button className={buttonhover} style={{padding: "4px 5px",borderRadius: "5px"}}>Enter</button>
                 </div>
                 <div className="w-full border">
-                    
+                    <FileUpload />
                 </div>
             </div>
         </div>

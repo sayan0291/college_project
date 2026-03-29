@@ -1,5 +1,5 @@
-import {aligncontainer,textalign,formsection} from "./styles"
-import SectionHeading from "./SectionHeading"
+import {aligncontainer,textalign,formsection} from "../styles.jsx"
+import SectionHeading from "../ui/SectionHeading.jsx"
 
 function About(){
 

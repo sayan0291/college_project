@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
-import { h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection ,departments , semesters} from "./styles"
+import { h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection ,departments , semesters} from "../Componenets/styles.jsx"
 import {useForm} from 'react-hook-form'
-import Errormessage from "./errorsmessage"
-import onRegisterSubmit from "./RegistrationHandler"
-import { useUser } from "./UserContext"
+import Errormessage from "../Form/FormHandler/errorsmessage.jsx"
+import onRegisterSubmit from "../Form/FormHandler/RegistrationHandler.jsx"
+import { useUser } from "../Context/UserContext.jsx"
 
 
 function StudentReg(){

@@ -1,8 +1,8 @@
-import HomeImage1 from './assets/meghnad_saha.jpg'
-import HomeImage2 from './assets/meghnad_saha_statue.jpg'
-import HomeImage3 from './assets/right_10023784.png'
-import { aligncontainer,textalign,pstyle,formsection,visions } from './styles'
-import SectionHeading from './SectionHeading'
+import HomeImage1 from '../../assets/meghnad_saha.jpg'
+import HomeImage2 from '../../assets/meghnad_saha_statue.jpg'
+import HomeImage3 from '../../assets/right_10023784.png'
+import { aligncontainer,textalign,pstyle,formsection,visions } from '../styles.jsx'
+import SectionHeading from './SectionHeading.jsx'
 
 
 function Home(){

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import adminimage from './assets/admin.png'
-import studentimage from './assets/student.png'
+import adminimage from '../../assets/admin.png'
+import studentimage from '../../assets/student.png'
 
 
 function Login(){

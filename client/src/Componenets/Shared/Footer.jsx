@@ -1,8 +1,8 @@
-import footerimage from './assets/footerimage.png'
+import footerimage from '../../assets/footerimage.png'
 import { FaFacebook, FaYoutube , FaTwitter , FaPhone } from "react-icons/fa"
 import { FaLocationDot } from "react-icons/fa6"
 import { MdEmail } from "react-icons/md";
-import {textalign,maplink} from './styles';
+import {textalign,maplink} from '../styles.jsx';
 
 
 
@@ -20,7 +20,7 @@ function Footer(){
 
     return(
         <footer className='font-serif'>
-            <div className='flex flex-col md:flex-row justify-between pt-5 px-2'>
+            <div className='flex flex-col md:flex-row justify-between items-center gap-2 pt-5 px-2'>
                 <div>
                     <img className="h-20 px-3" src={footerimage} alt="footer-image" />
                 </div>

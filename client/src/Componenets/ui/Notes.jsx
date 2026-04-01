@@ -4,6 +4,9 @@ import FileUpload from "./FileUpload.jsx"
 
 function Notes(){
 
+    const userDetails = JSON.parse(localStorage.getItem('userData'))
+
+
     const [sem,setSem] = useState("")
     const setChange = (event) => {
         setSem(event.target.value)
@@ -19,7 +22,7 @@ function Notes(){
                     <button className={buttonhover} style={{padding: "4px 5px",borderRadius: "5px"}}>Enter</button>
                 </div>
                 <div className="w-full border">
-                    <FileUpload />
+                    {userDetails.user.role === "" ? `${userDetails.user.department} ${userDetails.user.semester}` : <FileUpload />}
                 </div>
             </div>
         </div>

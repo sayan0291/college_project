@@ -21,7 +21,6 @@ export function UserProvider({ children }) {
   )
 
   const login = (user) => {
-    console.log(user);
     setIsLoggedIn(true);
     setUserData(user);
     localStorage.setItem('isLoggedIn', 'true');
@@ -36,6 +35,7 @@ export function UserProvider({ children }) {
     localStorage.clear();
   };
 
+  if(loading) return null;
 
   return (
     <UserContext.Provider value={{ isLoggedIn, userData, login, logout }}>

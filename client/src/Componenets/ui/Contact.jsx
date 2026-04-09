@@ -1,4 +1,3 @@
-import { linkstyle,imagestyle } from "../styles.jsx"
 import SectionHeading from "../ui/SectionHeading.jsx"
 import website from "../../assets/localization.png"
 import phone from "../../assets/telephone.png"
@@ -19,14 +18,14 @@ function Contact(){
     ]
 
     return(
-        <div className="px-10 py-5 w-full">
+        <div className="page-padding w-full">
                 <img className="md:px-45 my-5 rounded-md" src="https://www.drmsithaldia.in/themes/images/carousel/banner6.jpg" alt="whole-campus" />
-                <div className="flex flex-col justify-center px-0 md:px-45">
+                <div className="fl-col gap-3 px-0 md:px-45">
                         <SectionHeading categories="Contact US" />
                         {contactcontent.map((Obj,index) => (
-                            <div key={index} className="align-section m-1 md:m-2" data-aos="fade-left">
-                                <img className={`${imagestyle} w-1/14 md:w-1/20`} src={Obj.images} alt="website-icon" />
-                                <a className={linkstyle} href={Obj.link} target="_blank" rel="noopener noreferrer">&nbsp;{Obj.text}</a>
+                            <div key={index} className="flex-center" data-aos="fade-left">
+                                <img className="image-style w-1/14 md:w-1/20" src={Obj.images} alt="website-icon" />
+                                <a className="link-style" href={Obj.link} target="_blank" rel="noopener noreferrer">&nbsp;{Obj.text}</a>
                             </div>
                         ))}
                     </div>

@@ -1,21 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import AOS from "aos"
 import "aos/dist/aos.css"
 import Navbar from './Componenets/Shared/Navbar.jsx'
-import Home from './Componenets/ui/Home.jsx'
 import Notice from './Componenets/ui/Notice.jsx'
-import About from './Componenets/ui/About.jsx'
 import Footer from './Componenets/Shared/Footer.jsx'
-import Contact from './Componenets/ui/Contact.jsx'
-import Notes from './Componenets/ui/Notes.jsx'
-import Login from './Componenets/ui/Login.jsx'
-import Admin from './Form/Admin.jsx'
-import Student from './Form/Student.jsx'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import Registration from './Form/Registration.jsx'
-import StudentReg from './Form/StudentReg.jsx'
-import ErrorPage from './Componenets/ui/ErrorPage.jsx'
+const Home = lazy(() => import('./Componenets/ui/Home.jsx'))
+const About = lazy(() => import('./Componenets/ui/About.jsx'))
+const Contact = lazy(() => import('./Componenets/ui/Contact.jsx'))
+const Notes = lazy(() => import('./Componenets/ui/Notes.jsx'))
+const Login = lazy(() => import('./Componenets/ui/Login.jsx'))
+const Admin = lazy(() => import('./Form/Admin.jsx'))
+const Student = lazy(() => import('./Form/Student.jsx'))
+const Registration = lazy(() => import('./Form/Registration.jsx'))
+const StudentReg = lazy(() => import('./Form/StudentReg.jsx'))
+const ErrorPage = lazy(() => import('./Componenets/ui/ErrorPage.jsx'))
 
 function App() {
   const isLoggedIn = localStorage.getItem("isLoggedIn")
@@ -33,18 +33,20 @@ function App() {
       <>
         <Navbar />
         <Notice />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/notes' element={!!isLoggedIn ? <Notes /> : <Navigate to="/Login" replace />} />
-          <Route path='/login' element={isLoggedIn ? <ErrorPage/> : <Login/>} />
-          <Route path='/admin' element={isLoggedIn ? <ErrorPage/> : <Admin />} />
-          <Route path='/student' element={isLoggedIn ? <ErrorPage/> : <Student />} />
-          <Route path='/studentregistration' element={isLoggedIn ? <ErrorPage/> : <StudentReg />} />
-          <Route path='/registration' element={isLoggedIn ? <Registration/> : <ErrorPage />} />
-        </Routes>
+        <Suspense fallback={<div className='w-screen h-screen bg-[#101010] text-lg text-red-400'>Loading page...</div>}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/notes' element={!!isLoggedIn ? <Notes /> : <Navigate to="/Login" replace />} />
+            <Route path='/login' element={isLoggedIn ? <ErrorPage/> : <Login/>} />
+            <Route path='/admin' element={isLoggedIn ? <ErrorPage/> : <Admin />} />
+            <Route path='/student' element={isLoggedIn ? <ErrorPage/> : <Student />} />
+            <Route path='/studentregistration' element={isLoggedIn ? <ErrorPage/> : <StudentReg />} />
+            <Route path='/registration' element={isLoggedIn ? <ErrorPage/> : <Registration />} />
+          </Routes>
+        </Suspense>
         <Footer />
       </>
   )

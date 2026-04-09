@@ -2,7 +2,7 @@ import footerimage from '../../assets/footerimage.png'
 import { FaFacebook, FaYoutube , FaTwitter , FaPhone } from "react-icons/fa"
 import { FaLocationDot } from "react-icons/fa6"
 import { MdEmail } from "react-icons/md";
-import {textalign,maplink} from '../styles.jsx';
+import {maplink} from '../styles.jsx';
 
 
 
@@ -20,11 +20,11 @@ function Footer(){
 
     return(
         <footer className='font-serif'>
-            <div className='flex flex-col md:flex-row justify-between items-center gap-2 pt-5 px-2'>
+            <div className='fl-col md:flex-row flex-between pt-5 px-2'>
                 <div>
                     <img className="h-20 px-3" src={footerimage} alt="footer-image" />
                 </div>
-                <div className={textalign} style={{gap: "2px"}}>
+                <div className="text-adjust" style={{gap: "2px"}}>
                     <h2 className='text-start text-blue-50 text-xl font-bold pb-3'>Contact</h2>
                     <div className={contactsection}>
                         <div className={iconsection}>

@@ -1,10 +1,23 @@
 import { useState } from "react"
-import { buttonhover, selectsection , semesters } from "../styles.jsx"
+import { buttonhover, selectsection , semesters , notes } from "../styles.jsx"
 import FileUpload from "./FileUpload.jsx"
 
 function Notes(){
 
-    const userDetails = JSON.parse(localStorage.getItem('userData'))
+    const userDetails = JSON.parse(localStorage.getItem('userData'));
+
+    const user = userDetails.user;
+
+    const notesShow = user.role === "Teacher" ? {department: user.department} : {department: user.department,semester: user.semester}
+
+    const notesObj = notes.find(obj => obj.sem === notesShow.semester)
+
+    const allNotes = [];
+    if(notesObj){
+        const books = notesObj.dept[notesShow.department]
+        allNotes.push(books)
+    }
+    console.log(allNotes)
 
 
     const [sem,setSem] = useState("")
@@ -13,18 +26,12 @@ function Notes(){
     }
 
     return(
-        <div className="px-10 py-5 font-serif">
-            <div className="flex justify-between p-2">
-                <div className="flex flex-col gap-5 m-5 bg-gray-300 padding-bottom">
-                    <select className={selectsection} value={sem} onChange={setChange}>
-                        {semesters.map((obj,index) => (<option key={index} value={obj.value}>{obj.name}</option>))}
-                    </select>
-                    <button className={buttonhover} style={{padding: "4px 5px",borderRadius: "5px"}}>Enter</button>
-                </div>
-                <div className="w-full border">
-                    {userDetails.user.role === "" ? `${userDetails.user.department} ${userDetails.user.semester}` : <FileUpload />}
-                </div>
-            </div>
+        <div className="px-10 py-5 font-serif min-h-110">
+            {
+                allNotes.map((obj,index) => 
+                    (<p key={index}>{obj}</p>)
+                )
+            }
         </div>
     )
 }

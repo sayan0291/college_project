@@ -14,7 +14,7 @@ function Navbar(){
     
     
     return(
-            <header className="flex justify-between items-center font-serif">
+            <header className="flex-between font-serif">
                 <a className="relative px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 font-medium text-white group text-center">
                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-purple-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-purple-700 group-hover:bg-purple-500 group-hover:-skew-x-12"></span>

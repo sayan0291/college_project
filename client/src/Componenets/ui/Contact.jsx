@@ -4,18 +4,15 @@ import phone from "../../assets/telephone.png"
 import email from "../../assets/mail.png"
 import location from "../../assets/location.jpg"
 
-
-
-
-function Contact(){
-
-    const contactcontent = [
+const contactcontent = [
         {name:"location",images:`${location}`,link:"https://www.google.com/maps/place/Dr.+Meghnad+Saha+Institute+of+Technology/@22.0586655,88.0716765,18.03z/data=!4m14!1m7!3m6!1s0x3a02f0bf99586ab5:0xd5387a955bf623d9!2sDr.+Meghnad+Saha+Institute+of+Technology!8m2!3d22.0589577!4d88.0726341!16s%2Fg%2F11g8xk0mzn!3m5!1s0x3a02f0bf99586ab5:0xd5387a955bf623d9!8m2!3d22.0589577!4d88.0726341!16s%2Fg%2F11g8xk0mzn?hl=en-IN&entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",text:"Debhog,Haldia Pin-721657,Purba Medinipur,WB,India"},
         {name:"website",images:`${website}`,link:"https://www.drmsithaldia.in/",text:"www.drmsithaldia.in"},
         {name:"phone",images:`${phone}`,link:"https://www.drmsithaldia.in/",text:"03224-253064"},
         {name:"email",images:`${email}`,link:"https://www.drmsithaldia.in/",text:"drmsithaldia@yahoo.com"},
         {name:"email",images:`${email}`,link:"https://www.drmsithaldia.in/",text:"drmsithaldia.tpc@gmail.com"},
-    ]
+]
+
+function Contact(){
 
     return(
         <div className="page-padding w-full">

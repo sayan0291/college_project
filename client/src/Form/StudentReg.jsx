@@ -1,10 +1,11 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
-import { h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection ,departments , semesters} from "../Componenets/styles.jsx"
+import { firstSection,secondSection,changehover, selectsection ,departments , semesters} from "../Componenets/styles.jsx"
 import {useForm} from 'react-hook-form'
 import Errormessage from "../Form/FormHandler/errorsmessage.jsx"
 import onRegisterSubmit from "../Form/FormHandler/RegistrationHandler.jsx"
 import { useUser } from "../Context/UserContext.jsx"
+import { FormInput,FormSelect } from "./Form.jsx"
 
 
 function StudentReg(){
@@ -29,21 +30,21 @@ function StudentReg(){
     return(
         <div className={firstSection}>
             <div className={secondSection}>
-                <h2 style={h2style}>Student</h2>
-                <form className={formsection} onSubmit={handleSubmit(handleFormSubmit)}>
+                <h2 className="h2-style">Student</h2>
+                <form className="fl-col items-center gap-5" onSubmit={handleSubmit(handleFormSubmit)}>
                     <Errormessage error={errormessages && {message: errormessages}}/>
-                    <input type="text" style={inputstyle} placeholder="Enter Your Registration N0." {...register("registrationNumber",{required: {value: true ,message: "The Field is Required"},validate: {value: value => value.length === 10 || "Registration no must have 10 characters"}})} />
+                    <FormInput type="text" placeHolder="Enter Your Registration N0." validation={register} registerFor="registrationNumber" />
                     <div className="md:flex justify-center gap-3">
-                        <select className={selectsection} {...register("department",{required: {value:true,message: "The Field is Required"}})} >
+                        <FormSelect validation={register} registerFor="department" registerSelect="selectItem">
                             {departments.map((obj,index) => (<option key={index} value={obj.Value}>{obj.name}</option>))}
-                        </select>
-                        <select className={selectsection} {...register("semester",{required: {value:true,message: "The Field is Required"}})}>
+                        </FormSelect>
+                        <FormSelect validation={register} registerFor="semester" registerSelect="selectItem">
                             {semesters.map((obj,index) => (<option key={index} value={obj.value}>{obj.name}</option>))}
-                        </select>
+                        </FormSelect>
                     </div>
-                    <input type="text" style={inputstyle} placeholder="Enter Password" {...register("password",{required: {value:true,message: "The field is required"},minLength: {value:5,message: "Password must have 5 characters"},maxLength: {value:9,message: "Password must have 9 characters"}})} />
-                    <input type="text" style={inputstyle} placeholder="Confirm Password" {...register("confirmpassword",{required: {value: true,message:"The field is required"},validate: value => value === passwordvalue || "Password do not match"})}/>
-                    <button disabled={isSubmitting} className={buttonhover} style={buttonstyle}>Enter</button>
+                    <FormInput type="password" placeHolder="Enter Password" validation={register} registerFor="password" />
+                    <FormInput type="password" placeHolder="Confirm Password" validation={register} registerFor="confirmPassword" />
+                    <button disabled={isSubmitting} className="submit-button">Enter</button>
                     <div className="flex">
                         <p>Have an Account ?</p>
                         <Link to='/student' className={changehover}>&nbsp;Log IN</Link>

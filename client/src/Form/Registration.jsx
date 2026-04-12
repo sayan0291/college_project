@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
-import { useNavigate } from 'react-router-dom'
-import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection, selectsection ,departments} from "../Componenets/styles.jsx"
+import {firstSection,secondSection,changehover ,departments} from "../Componenets/styles.jsx"
 import Errormessage from "../Form/FormHandler/errorsmessage.jsx"
 import onRegisterSubmit from "../Form/FormHandler/RegistrationHandler.jsx"
 import { useState } from "react"
 import { useUser } from "../Context/UserContext.jsx"
+import { FormInput,FormSelect } from "./Form.jsx"
 
 function Registration(){
     const navigate = useNavigate();
@@ -29,16 +29,16 @@ function Registration(){
     return(
         <div className={firstSection}>
             <div className={secondSection}>
-                <h2 style={h2style}>Sign UP</h2>
-                <form className={formsection} onSubmit={handleSubmit(handleFormSubmit)}>
+                <h2 className="h2-style">Sign UP</h2>
+                <form className="fl-col items-center gap-5" onSubmit={handleSubmit(handleFormSubmit)}>
                     <Errormessage error={errormessages && {message: errormessages}} />
-                    <input type="text" style={inputstyle} placeholder="Enter Your Email" {...register("email",{required: {value:true,message: "The field is required"},pattern: {value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,message: "Enter a valid email address"}})}/>
-                    <input type="text" style={inputstyle} placeholder="Enter Password" {...register("password",{required: {value:true,message: "The field is required"},minLength: {value:5,message: "Password must have 5 characters"},maxLength: {value:9,message: "Password must have 9 characters"}})} />
-                    <input type="text" style={inputstyle} placeholder="Confirm Password" {...register("confirmpassword",{required: {value: true,message:"The field is required"},validate: value => value === passwordvalue || "Password do not match"})}/>
-                    <select className={selectsection} {...register("department",{required: {value:true,message: "The Field is Required"}})}>
+                    <FormInput type="email" placeHolder="Enter Your Email:" validation={register} registerFor="email" />
+                    <FormInput type="password" placeHolder="Enter Password" validation={register} registerFor="password" />
+                    <FormInput type="password" placeHolder="Confirm Password" validation={register} registerFor="confirmPassword" />
+                    <FormSelect validation={register} registerFor="department" registerSelect="selectItem">
                         {departments.map((obj,index) => (<option key={index} value={obj.Value}>{obj.name}</option>))}
-                    </select>
-                    <button disabled={isSubmitting} style={buttonstyle} className={buttonhover}>Sign UP</button>
+                    </FormSelect>
+                    <button disabled={isSubmitting} className="submit-button">Sign UP</button>
                     <div className="flex"><p className="text-gray-500">Have an Account ?</p><Link to='/admin' className={changehover}>&nbsp;Log IN</Link></div>
                 </form>
             </div>

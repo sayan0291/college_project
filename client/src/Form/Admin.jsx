@@ -1,11 +1,12 @@
-import { data, Link } from "react-router-dom"
-import {h2style, inputstyle, buttonstyle,firstSection,secondSection,buttonhover,changehover,formsection} from "../Componenets/styles.jsx"
+import { Link } from "react-router-dom"
+import { firstSection,secondSection,changehover} from "../Componenets/styles.jsx"
 import { useForm } from "react-hook-form"
 import Errormessage from '../Form/FormHandler/errorsmessage.jsx'
 import { useNavigate } from "react-router-dom"
 import Onloginsubmit from "../Form/FormHandler/LoginHandler.jsx"
 import { useUser } from '../Context/UserContext.jsx'
 import { useState } from "react"
+import { FormInput } from "./Form.jsx"
 
 
 function Admin(){
@@ -27,12 +28,12 @@ function Admin(){
     return(
         <div className={firstSection}>
             <div className={secondSection}>
-                <h2 style={h2style}>Sign IN</h2>
-                <form className={formsection} onSubmit={handleSubmit(handleloginSubmit)}>
-                    <Errormessage error={errormessages && {message: errormessages}} />
-                    <input type="text" style={inputstyle} placeholder="Enter Your Email" {...register("email",{required: {value: true, message: "Email is Required"},pattern:{value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,message: "Enter a valid email dress"}})}/>
-                    <input type="password" style={inputstyle} placeholder="Enter Password" {...register("password",{required: {value: true,message: "Give your password"}})} />
-                    <button disabled={isSubmitting} className={buttonhover} style={buttonstyle}>Log IN</button>
+                <h2 className="h2-style">Sign IN</h2>
+                <form className="fl-col items-center gap-5" onSubmit={handleSubmit(handleloginSubmit)}>
+                    {errormessages && <Errormessage error={errormessages && {message: errormessages}} />}
+                    <FormInput type="email" placeHolder="Enter Your Email:" validation={register} registerFor="email" />
+                    <FormInput type="password" placeHolder="Enter Password" validation={register} registerFor="password" />
+                    <button disabled={isSubmitting} className="submit-button">Log IN</button>
                     <div className="flex">
                         <p className="text-gray-500">Create Account ?</p>
                         <Link to='/registration' className={changehover}>&nbsp;Sign UP</Link>

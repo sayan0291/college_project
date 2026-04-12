@@ -5,7 +5,9 @@
     header{
         @apply mx-9 my-7;
     }
-
+    img{
+        @apply rounded-["2px"];
+    }
     footer{
         @apply p-5 bg-[rgb(3,7,58)];
     }
@@ -16,7 +18,7 @@
 }
 
 @utility fl-col{
-    @apply flex flex-col gap-5;
+    @apply flex flex-col gap-8;
 }
 
 @utility flex-center{
@@ -32,7 +34,7 @@
 }
 
 @utility text-adjust{
-    @apply fl-col text-start text-sm md:text-lg pl-3;
+    @apply fl-col gap-2 text-start text-sm md:text-lg pl-3;
 }
 
 @utility p-style{
@@ -47,9 +49,20 @@
     @apply rounded mr-4 transition-transform duration-500 hover:scale-x-[-1];
 }
 
+@utility h2-style{
+    @apply text-blue-700 text-[clamp(15px,5vw,25px)] font-bold text-center;
+}
 
-.image1{
-    border-radius: 2px;
+@utility submit-button{
+    @apply bg-blue-600 hover:bg-indigo-500 duration-200 px-6 py-1 rounded-md text-white;
+}
+
+@utility input-style{
+    @apply p-[5px_10px] bg-white rounded-[8px] border border-[#64B5F6] w-full text-base text-[navy] outline-none shadow-[0_1px_8px_rgba(108,121,202,0.573)];
+}
+
+@utility select-section{
+    @apply py-2 px-3 bg-stone-100 rounded text-base text-blue-950 outline-none;
 }
 
 .gradient{

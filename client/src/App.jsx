@@ -33,7 +33,7 @@ function App() {
       <>
         <Navbar />
         <Notice />
-        <Suspense fallback={<div className='w-screen h-screen bg-[#101010] text-lg text-red-400'>Loading page...</div>}>
+        <Suspense fallback={<div className='w-screen h-screen bg-transparent text-lg text-red-400'>Loading page...</div>}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
